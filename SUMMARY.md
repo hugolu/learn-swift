@@ -15,5 +15,5 @@
    * [集合型別](Advanced/CollectionTypes.md)
 * [補充](Supplements/README.md)
    * [高階函式](Supplements/HighOrderFunctions.md)
-   * 記憶體管理
+   * [記憶體管理](Supplements/ARC.md)
 
