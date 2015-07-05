@@ -7,5 +7,6 @@
 * [進階](Advanced/README.md)
    * [Class](Advanced/Class.md)
    * [Struct](Advanced/Struct.md)
+   * Enum
 * [補充](Supplements.md)
 
