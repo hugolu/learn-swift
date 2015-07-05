@@ -25,7 +25,6 @@ let 🐶🐮 = "dogcow"
 ### 分號
 
 分號可有可無。要在一行內寫出多個statement用分號隔開，但會降低可讀性。
-
 ``` swift
 var x = 1
 var y = 2; var z = 3
