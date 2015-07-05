@@ -14,4 +14,4 @@
 ### 參考資料
 
 * [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html) - Swift 官方文件
-* [Swift 程式設計入門](http://www.books.com.tw/products/0010668967) -  深入淺出介紹Swift的好書
+* [Swift 程式設計入門](http://www.books.com.tw/products/0010668967) -  深入淺出介紹 Swift的 好書
