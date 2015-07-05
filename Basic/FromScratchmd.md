@@ -2,8 +2,11 @@
 
 宣告變數使用`var`，宣告常數使用`let`。
 ```swift
-var variable = 10
-let constant = 20
+var a = 0
+a = 1
+
+let b = 0
+b = 1       // compile error!
 ```
 
 一行內宣告多個常數或變數，可用`,`隔開。
