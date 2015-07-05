@@ -17,7 +17,16 @@ var pi = 3.14159265359
 
 ### 布林值
 
-Bool
+Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
+```swift
+var dream = true
+```
+
 ### 字串
+
+用兩個引號(`"`)包含的字串。
+```swift
+var message = "hello world"
+```
 
 ### 型別檢查 & 型別推斷
