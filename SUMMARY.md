@@ -8,6 +8,6 @@
    * [Class](Advanced/Class.md)
    * [Struct](Advanced/Struct.md)
    * [Enum](Advanced/Enum.md)
-   * 集合型別
+   * [集合型別](Advanced/CollectionTypes.md)
 * [補充](Supplements.md)
 
