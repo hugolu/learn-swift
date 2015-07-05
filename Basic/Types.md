@@ -3,7 +3,7 @@
 內建有號整數型別：`Int8`、`Int16`、`Int32`、`Int64`。
 內建無號整數型別：`UInt8`、`UInt16`、`UInt32`、`UInt64`。
 
-Int等同Int64，UInt等同UInt64。表達時使用底線(`_`)增加可讀性。
+Int等同Int64，UInt等同UInt64。表達時可用底線(`_`)增加可讀性。
 ```swift
 var num = 123_456_789
 ```
