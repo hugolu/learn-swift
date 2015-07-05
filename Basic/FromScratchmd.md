@@ -1,6 +1,6 @@
 ### 變數與常數
 
-變數使用`var`，常數使用`let`。
+宣告變數使用`var`，宣告常數使用`let`。
 ``` swift
 var variable = 10
 let constant = 20
