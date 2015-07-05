@@ -29,4 +29,8 @@ var dream = true
 var message = "hello world"
 ```
 
-### 型別檢查 & 型別推斷
+### 型別推斷
+
+Swift 是一種很聰明的語言。大部分都能從`=`左邊
+
+### 型別檢查
