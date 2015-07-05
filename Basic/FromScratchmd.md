@@ -6,6 +6,12 @@ var variable = 10
 let constant = 20
 ```
 
+一行內宣告多個常數或變數，可用`,`隔開。
+```swift
+var x = 1, y = 2, z = 3
+let a = 1, b = 2, c = 3
+```
+
 Swift 支援 Unicode 字元。
 ```swift
 let π = 3.14159
