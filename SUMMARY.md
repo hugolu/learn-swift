@@ -8,6 +8,7 @@
    * [Optional](Basic/Optional.md)
    * [Function](Basic/Function.md)
    * [Closure](Basic/Closure.md)
+   * 從頭開始
 * [進階](Advanced/README.md)
    * [Class](Advanced/Class.md)
    * [Struct](Advanced/Struct.md)
