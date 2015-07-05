@@ -6,6 +6,6 @@
    * [基本運算子](Basic/Operators.md)
 * [進階](Advanced/README.md)
    * [Class](Advanced/Class.md)
-   * Struct
+   * [Struct](Advanced/Struct.md)
 * [補充](Supplements.md)
 
