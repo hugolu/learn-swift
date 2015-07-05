@@ -6,5 +6,6 @@
    * 基本運算子
 * [進階部分](AdvancedTopics.md)
    * Class
+   * Struct
 * [補充](Supplements.md)
 
