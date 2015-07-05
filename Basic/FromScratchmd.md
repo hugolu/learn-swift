@@ -19,6 +19,17 @@ let 你好 = "你好世界"
 let 🐶🐮 = "dogcow"
 ```
 
+### 輸出
+
+Swift 使用 `print` 做不換行輸出，`println`做換行輸出。
+```swift
+println("hello")    // 輸出 hello
+println("world")    // 輸出 world
+
+print("hello")
+print("world")      // 輸出 helloworld
+```
+
 ### 註解
 
 ```swift
