@@ -35,7 +35,7 @@ print("world")      // 輸出 helloworld
 var num = 100
 var str = "foobar"
 
-println("\(str) \(num)")
+println("\(str) \(num)")    // 輸出 foobar 100
 ```
 
 ### 註解
