@@ -2,4 +2,4 @@
 
 * [First Chapter](chapter1.md)
 
-* [基本](basics.md)
+* [基礎部分](basics.md)
