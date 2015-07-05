@@ -13,6 +13,6 @@
    * [Struct](Advanced/Struct.md)
    * [Enum](Advanced/Enum.md)
    * [集合型別](Advanced/CollectionTypes.md)
-* [補充](Supplements.md)
+* [補充](Supplements/README.md)
    * 高階函式
 
