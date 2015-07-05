@@ -5,7 +5,7 @@
    * [基本型別](Basic/Types.md)
    * [基本運算子](Basic/Operators.md)
    * [流程控制](Basic/ControlFlow.md)
-   * Optional
+   * [Optional](Basic/Optional.md)
 * [進階](Advanced/README.md)
    * [Class](Advanced/Class.md)
    * [Struct](Advanced/Struct.md)
