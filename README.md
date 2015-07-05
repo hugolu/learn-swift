@@ -1,4 +1,12 @@
-My Awesome Book
+《Swift 學習筆記》
 =======
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+這是一份閱讀與練習的心得，目的不在編寫完整的說明文件，只是隨手記錄自己學會多少，順便記錄、註解在 playground 上練習。
+
+
+### 目標聽眾
+
+* 我
+* 對 Swift 有興趣的人
+
+### 參考資料
