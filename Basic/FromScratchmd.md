@@ -30,7 +30,13 @@ print("hello")
 print("world")      // 輸出 helloworld
 ```
 
-string interpolation 
+字串插值（string interpolation）讓輸出更方便。
+```swfit
+var num = 100
+var str = "foobar"
+
+println("\(str) \(num)")
+```
 
 ### 註解
 
