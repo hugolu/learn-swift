@@ -2,7 +2,7 @@
 
 * [簡介](README.md)
 * [基礎部分](BasicTopics.md)
-   * 基本型別
+   * [基本型別](BasicTypes.md)
 * [進階部分](AdvancedTopics.md)
 * [補充](Supplements.md)
 
