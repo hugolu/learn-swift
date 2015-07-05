@@ -3,7 +3,7 @@
 * [簡介](README.md)
 * [基礎](Basic/README.md)
    * [型別](Basic/Types.md)
-   * [基本運算子](Basic/Operators.md)
+   * [運算子](Basic/Operators.md)
    * [流程控制](Basic/ControlFlow.md)
    * [Optional](Basic/Optional.md)
    * [Function](Basic/Function.md)
