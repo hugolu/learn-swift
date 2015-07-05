@@ -5,7 +5,7 @@
    * [基本型別](Basic/Types.md)
    * [基本運算子](Basic/Operators.md)
 * [進階](Advanced/README.md)
-   * Class
+   * [Class](Advanced/Class.md)
    * Struct
 * [補充](Supplements.md)
 
