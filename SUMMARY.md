@@ -14,4 +14,5 @@
    * [Enum](Advanced/Enum.md)
    * [集合型別](Advanced/CollectionTypes.md)
 * [補充](Supplements.md)
+   * 高階函式
 
