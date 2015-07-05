@@ -12,7 +12,7 @@ b = 1       // compile error!
 一行內宣告多個常數或變數，可用`,`隔開。
 ```swift
 var x = 1, y = 2, z = 3
-let a = 1, b = 2, c = 3
+let pi = 3.14159, e = 2.71828
 ```
 
 Swift 支援 Unicode 字元。
