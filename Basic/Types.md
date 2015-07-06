@@ -29,7 +29,7 @@ var dream = true
 var message = "hello world"
 ```
 
-### 型別推斷 (*Type Inference*)
+### 型別推斷 (_Type Inference_)
 
 Swift 是一種很聰明的語言。通常能從`=`左邊推測右邊的變數或常數的型別，當然使用者也可以自行宣告。以下整數、浮點數、布林數、字串宣告方式顯式與隱式意義相同。
 ```swift
