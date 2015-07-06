@@ -66,6 +66,9 @@ var num1 = 100
 var num2: Int
 num1 = num2         //error: variable 'num2' used before being initialized
 
+var max = UInt8.max
+max = max + 1       //Execution was interrupted, reason: EXC_BAD_INSTRUCTION
+
 var str = "hello"
 str = 123           //error: cannot assign a value of type 'Int' to a value of type 'String'
 
