@@ -84,6 +84,18 @@ func hi() -> String {
 hi()    //return: "Hello, World."
 ```
 
+function 沒有回傳值可以這麼宣告。
+```swift
+func foo() {
+}
+
+func bar() -> Void {
+}
+
+func baz() -> () {
+}
+```
+
 
 <a name="overloading"></a>
 ### function 的多載
