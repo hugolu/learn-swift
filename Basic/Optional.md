@@ -37,17 +37,37 @@ var age: Int? = 18
 age = age! + 1
 ```
 
+<a name="check"></a>
+### 檢查是否有值
+
 強制解開一個 `nil` 的optional，會讓程式炸掉。
 ``` switch
 var age: Int?
 age! //fatal error: unexpectedly found nil while unwrapping an Optional value
 ```
 
-<a name="check"></a>
-### 檢查是否有值
+optional 取值前要先判斷是否為nil。
+```swift
+var age: Int?
+
+if age != nil {
+    println("age: \(age!)")     //不會執行
+}
+```
 
 <a name="optional_binding"></a>
 ### 判斷並取值 (*optional binding*)
+
+先判斷是否為 `nil`，再使用 `!` 取值方式太囉唆，optional binding技巧將兩步驟合併為一個。
+```swift
+var age: Int? = 20
+
+if let ageNum = age {
+    println("age=\(ageNum)") //output: age=20
+}
+```
+* 若 age 有值，得到 ageNum=20 型別為 `Int`。
+* 若 age 無值，`{}`內程式不會被執行。
 
 <a name="implicitly_unwrapped_optional"></a>
 ### 自動取值 (*implicitly unwrapped optional*)
