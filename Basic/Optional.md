@@ -11,6 +11,12 @@
 <a name="reasons"></a>
 ### 使用 optional 的理由
 
+optional 是個包裝型別的容器，有兩種狀態：一個是空無一物、一個就是型別的值。
+
+```swift
+var age:Int = -1
+```
+
 <a name="declartion"></a>
 ### 宣告
 
