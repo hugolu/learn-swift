@@ -72,5 +72,14 @@ if let ageNum = age {
 <a name="implicitly_unwrapped_optional"></a>
 ### 自動取值 (*implicitly unwrapped optional*)
 
+如果變數或常數一旦給值後就不會再變回無值的狀態，可以利用自動取值的方式宣告。型別後面加上問號 `!` 表示變數是個 implicitly unwrapped optional。
+```swift
+let name: String! = "Hugo"
+var age: Int! = 18
+
+age = age + 1
+println("I'm \(name), \(age) years old.")   //output: I'm Hugo, 19 years old.
+```
+
 <a name="double_question_mark"></a>
 ### 無值給預設值
