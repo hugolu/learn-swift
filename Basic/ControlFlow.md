@@ -12,6 +12,13 @@ if num > 0 {
 }
 ```
 
+判斷式結果必須是 `Bool`。
+```swift
+var num = 0
+if num {    //error: type 'Int' does not conform to protocol 'BooleanType'
+}
+```
+
 ### switch
 
 ### for
