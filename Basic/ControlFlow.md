@@ -142,7 +142,7 @@ do {
 
 ### 指定範圍
 
-使用 range operator，宣告某數字區間的範圍。
+使用 range operator，宣告某數字區間的範圍。（限制：只能遞增，每次+1）
 ```switch
 for num in 1...5 {
     print(num)
@@ -151,6 +151,17 @@ for num in 1...5 {
 for num in 1..<5 {
     print(num)
 }   //output: 1234
+```
+
+使用 stride，更靈活宣告範圍。
+```swift
+for num in stride(from: 9, through: 1, by: -2) {
+    print(num)
+}   //output: 97531 (包含終點)
+
+for num in stride(from: 9, to: 1, by: -2) {
+    print(num)
+}   //output: 9753 (不含終點)
 ```
 
 ### 進階用法
