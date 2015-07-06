@@ -14,13 +14,22 @@
 <a name="format"></a>
 ### function 的格式
 
-最簡單的function - 沒有參數，沒有回傳值。
+最簡單的 function - 沒有參數，沒有回傳值。
 ```swift
 func hi() {
     println("hello")
 }
 
 hi()    //output: hello
+```
+
+接受參數的 function。
+```swift
+func hi(name: String) {
+    println("Hello, \(name).")
+}
+
+hi("John")    //output: Hello, John.
 ```
 
 <a name="parameter"></a>
