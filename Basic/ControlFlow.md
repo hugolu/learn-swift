@@ -2,6 +2,7 @@
 
 - [if-else](#if_else)
 - [switch](#switch)
+- [for](#for)
 
 <a name="if-else"></a>
 ### if-else
@@ -111,6 +112,7 @@ default:
 }
 ```
 
+<a name="for"></a>
 ### for
 
 for-loop 條件判斷不需加`()`，要用也可以。判斷式結果必須是 `Bool`。複合判斷使用`&&`或`||`。`{}`不能省略。
@@ -130,6 +132,7 @@ for friend in friends {
 
 > for-loop 使用變數（`var num: Int`），for-in 使用常數（`let friend: String`）。
 
+<a name="while"></a>
 ### while-loop, do-while
 
 兩種用法，直接看範例。
