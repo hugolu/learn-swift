@@ -1,4 +1,4 @@
-### 整數 (Int、UInt)
+### 整數 (`Int`、`UInt`)
 
 內建有號整數型別：`Int8`、`Int16`、`Int32`、`Int64`。
 內建無號整數型別：`UInt8`、`UInt16`、`UInt32`、`UInt64`。
@@ -8,28 +8,28 @@
 var num = 123_456_789
 ```
 
-### 浮點數 (Float、Double)
+### 浮點數 (`Float`、`Double`)
 
 使用`Double`(64-bit)、`Float`(32-bit)表達浮點數。
 ```swift
 var pi = 3.14159265359
 ```
 
-### 布林值
+### 布林值 (`Bool`)
 
 Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
 ```swift
 var dream = true
 ```
 
-### 字串
+### 字串 (`String`)
 
 用兩個引號(`"`)包含的字串。
 ```swift
 var message = "hello world"
 ```
 
-### 型別推斷 (_Type Inference_)
+### 型別推斷 (*Type Inference*)
 
 Swift 是一種很聰明的語言。通常能從`=`左邊推測右邊的變數或常數的型別，當然使用者也可以自行宣告。以下整數、浮點數、布林數、字串宣告方式顯式與隱式意義相同。
 ```swift
