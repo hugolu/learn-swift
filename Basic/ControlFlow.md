@@ -37,10 +37,49 @@ if true     //expectd '{' after 'if' condition
 
 ### switch
 
+條件判斷不需加`()`，要用也可以。
+```swift
+var grade = 0
+
+switch grade {
+case 0:
+    "白癡"  //執行這行
+case 100:
+    "天才"
+default:
+    "平凡人"
+}
+```
+
+一定要包含所有`case`，或是使用`default`捕捉剩下的情況。
+```swift
+var grade = 0
+
+switch grade {
+case 0:
+    "白癡"
+case 100:
+    "天才"
+}   //error: switch must be exhaustive, consider adding a default clause
+```
+
+case不需break可自動跳出switch，case不做任何事必須使用break。
+```swift
+var grade = 0
+
+switch grade {
+case 0:
+    fallthrough
+case 100:
+    "天才白痴一線間"
+default:
+    "平凡人"
+}
+```
+
+
 ### for
 
 ### while-loop
 
 ### 指定範圍
-
-### 字串比較
