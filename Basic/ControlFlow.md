@@ -39,11 +39,11 @@ if true     //expectd '{' after 'if' condition
 
 條件判斷不需加`()`，要用也可以。
 ```swift
-var grade = 0
+var score = 0
 
-switch grade {
+switch score {
 case 0:
-    "白癡"  //執行這行
+    "白癡"  //執行
 case 100:
     "天才"
 default:
@@ -53,27 +53,28 @@ default:
 
 一定要包含所有`case`，或是使用`default`捕捉剩下的情況。
 ```swift
-var grade = 0
+var score = 0
 
-switch grade {
+switch score {
 case 0:
-    "白癡"
+    "白癡"  //執行
 case 100:
     "天才"
 }   //error: switch must be exhaustive, consider adding a default clause
 ```
 
-case不需break可自動跳出switch，case不做任何事必須使用break。
-```swift
-var grade = 0
+`case`不需`break`可自動跳出`switch`，`case`不做任何事必須使用`break`。使用`fallthrough`繼續執行下個`case`。
 
-switch grade {
+```swift
+var score = 0
+
+switch score {
 case 0:
     fallthrough
 case 100:
-    "天才白痴一線間"
+    "天才白痴一線間"    //執行
 default:
-    "平凡人"
+    break
 }
 ```
 
