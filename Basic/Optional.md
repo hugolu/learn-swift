@@ -66,7 +66,7 @@ if let ageNum = age {
     println("age=\(ageNum)") //output: age=20
 }
 ```
-* 若 age 有值，得到 ageNum=20 型別為 `Int`。
+* 若 age 有值，得到 ageNum=20 型別為 `Int`，使用 ageNum 不需透過 `!` 強制解開包裝。
 * 若 age 無值，`{}`內程式不會被執行。
 
 <a name="implicitly_unwrapped_optional"></a>
