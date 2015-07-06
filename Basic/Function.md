@@ -142,6 +142,7 @@ var cnt: Int = hi("world")      //return: 5
 
 - 不限數量參數必須放在餐數列最後
 - 最多只能有一個參數是不限數量參數
+
 ```swift
 func hi(adjective: String, pets: String...) {
     for pet in pets {
