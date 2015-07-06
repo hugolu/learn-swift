@@ -19,6 +19,15 @@ if num {    //error: type 'Int' does not conform to protocol 'BooleanType'
 }
 ```
 
+複合判斷使用`&&`或`||`。
+```swift
+var weekend = true
+var sunny = true
+if weekend && sunny {
+    var mood = "😄"
+}
+```
+
 ### switch
 
 ### for
