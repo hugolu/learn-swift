@@ -1,3 +1,11 @@
+## 從頭開始
+
+- [變數與常數](#Variable_Constant)
+- [輸出](#ConsoleOutput)
+- [註解](#Comment)
+- [分號](#Semicolon)
+
+<a name="Variable_Constant"></a>
 ### 變數與常數
 
 宣告變數使用`var`，宣告常數使用`let`。如果變數宣告後不會再變更內容，可改宣告為常數，一來邏輯更清楚，二來能優化程式效能。
@@ -22,6 +30,7 @@ let 你好 = "你好世界"
 let 🐶🐮 = "dogcow"
 ```
 
+<a name="ConsoleOutput"></a>
 ### 輸出
 
 Swift 使用 `print` 做不換行輸出，`println`做換行輸出。
@@ -41,6 +50,7 @@ var str = "foobar"
 println("\(str) \(num)")    //output: foobar 100
 ```
 
+<a name="Comment"></a>
 ### 註解
 
 ```swift
@@ -50,6 +60,7 @@ println("\(str) \(num)")    //output: foobar 100
    多行註解 */
 ```
 
+<a name="Semicolon"></a>
 ### 分號
 
 分號可有可無。要在一行內寫出多個statement用分號隔開，但會降低可讀性。
