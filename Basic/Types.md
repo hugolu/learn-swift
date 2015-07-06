@@ -57,12 +57,15 @@ var s2: String = "hello"
 
 ### 型別安全 (*Type Safety*)
 
-Swift 也是一種非常龜毛的語言。常數、變數使用前必須給定初值，變數型別一旦決定就無法變更，整數overflow會crash，型別轉換必須顯式指定型別。
+Swift 也是一種非常龜毛的語言。例如，宣告變數不能只宣告名稱，常數、變數使用前必須給定初值，變數型別一旦決定就無法變更，整數overflow會crash，型別轉換必須顯式指定型別。
 ```swift
+var num         //error: type annotation missing in pattern
+num = 1
+
 var num1 = 100
 var num2: Int
 num1 = num2     //error: variable 'num2' used before being initialized
 
-var str = "hello world"
+var str = "hello"
 str = 123       //error: cannot assign a value of type 'Int' to a value of type 'String'
 ```
