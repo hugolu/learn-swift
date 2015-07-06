@@ -28,6 +28,13 @@ if weekend && sunny {
 }
 ```
 
+條件成立時，就算只執行一行程式也不能省略`{}`。
+```swift
+var num = 1
+if true     //expectd '{' after 'if' condition
+    num = 2
+```
+
 ### switch
 
 ### for
