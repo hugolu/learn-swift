@@ -123,7 +123,22 @@ for friend in friends {
 
 > for-loop 使用變數（`var num: Int`），for-in 使用常數（`let friend: String`）。
 
-### while-loop
+### while-loop, do-while
+
+兩種用法，直接看範例。
+```swift
+var num = 10
+
+while num-- > 0 {
+    println("while-loop: \(num)")
+}
+
+do {
+    println("do-while: \(num)")
+} while ++num < 10
+```
+
+> Swift2 修改 do-while 語法，改用 repeat-while。
 
 ### 指定範圍
 
