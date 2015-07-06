@@ -3,6 +3,9 @@
 - [if-else](#if_else)
 - [switch](#switch)
 - [for](#for)
+- [while](#while)
+- [指定範圍](#range)
+- [進階用法](#advanced)
 
 <a name="if-else"></a>
 ### if-else
@@ -150,6 +153,7 @@ do {
 
 > Swift2 修改 do-while 語法，改用 repeat-while。
 
+<a name="range"></a>
 ### 指定範圍
 
 使用 range operator，宣告某數字區間的範圍。（限制：只能遞增，每次+1）
@@ -174,6 +178,7 @@ for num in stride(from: 9, to: 1, by: -2) {
 }   //output: 9753 (不含終點)
 ```
 
+<a name="advanced"></a>
 ### 進階用法
 
 switch + range：
