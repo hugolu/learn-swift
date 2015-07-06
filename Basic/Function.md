@@ -75,6 +75,14 @@ func hi(var name: String) {
 hi("John")    //output: Hello, World.
 ```
 
+function 可以有回傳值。
+```swift
+func hi() -> String {
+    return "Hello, World."
+}
+
+hi()    //return: "Hello, World."
+```
 
 
 <a name="overloading"></a>
