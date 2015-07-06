@@ -32,6 +32,17 @@ func hi(name: String) {
 hi("John")    //output: Hello, John.
 ```
 
+雙重名稱的參數，內部、外部使用。
+```swift
+func hi(friendName name: String) {
+    println("Hello, \(name).")
+}
+
+hi(friendName: "John")    //output: Hello, John.
+```
+
+
+
 <a name="parameter"></a>
 ### function 的參數
 
