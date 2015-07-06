@@ -90,6 +90,20 @@ default:
 }
 ```
 
+可比較任何型別。
+```swift
+var fruit = "蘋果"
+
+switch fruit {
+case "蘋果":
+    "好吃"              //執行
+case "榴槤":
+    "噁心"
+default:
+    "還好"
+}
+```
+
 ### for
 
 ### while-loop
