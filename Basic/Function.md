@@ -101,6 +101,40 @@ func baz() -> () {
 
 function signature (簽名) 包含函式名稱、參數名稱、參數型別、回傳值。同名函式簽名不同可以同時存在。
 ```swift
+func hi(something: String) {
+    println("hello \(something)")
+}
+
+func hi(something: Int) {
+    println("hello \(something)")
+}
+
+hi(123)     //output: hello 123
+hi("world") //output: hello world
+```
+```swift
+func hi(name something: String) {
+    println("hello \(something)")
+}
+
+func hi(food something: String) {
+    println("hello \(something)")
+}
+
+hi(name: "Hugo")    //output: hello Hugo
+hi(food: "Banana")  //output: hello Banana
+```
+```swift
+func hi(something: String) -> String {
+    return "hello \(something)"
+}
+
+func hi(something: String) -> Int {
+    return count(something)
+}
+
+var str: String = hi("world")   //return: "hello world"
+var cnt: Int = hi("world")      //return: 5
 ```
 
 <a name="variadic_parameters"></a>
