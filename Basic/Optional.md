@@ -29,7 +29,7 @@ var name: String? = nil
 > `Int` 與 `?` 之間不可留空白。
 
 <a name="get_set"></a>
-### 設定與讀取](#get_set)
+### 設定與讀取
 
 <a name="check"></a>
 ### 檢查是否有值
