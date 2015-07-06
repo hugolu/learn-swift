@@ -140,6 +140,16 @@ var cnt: Int = hi("world")      //return: 5
 <a name="variadic_parameters"></a>
 ### function 不限數量的參數
 
+```swift
+func hi(adjective: String, pets: String...) {
+    for pet in pets {
+        print("\(adjective) \(pet), ")
+    }
+}
+
+hi("cute", "dog", "cat", "rabbit"); //output: cute dog, cute cat, cute rabbit,
+```
+
 <a name="function_type"></a>
 ### function 型別
 
