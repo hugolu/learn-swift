@@ -6,7 +6,7 @@ var a = 0
 a = 1
 
 let b = 0
-b = 1       // compile error!
+b = 1       //error: cannot assign to 'let' value 'b'
 ```
 
 一行內宣告多個常數或變數，可用`,`隔開。
@@ -26,11 +26,11 @@ let 🐶🐮 = "dogcow"
 
 Swift 使用 `print` 做不換行輸出，`println`做換行輸出。
 ```swift
-println("hello")    // 輸出 hello
-println("world")    // 輸出 world
+println("hello")    //output: hello
+println("world")    //output: world
 
 print("hello")
-print("world")      // 輸出 helloworld
+print("world")      //output: helloworld
 ```
 
 字串插值（string interpolation）讓輸出更方便。
@@ -38,7 +38,7 @@ print("world")      // 輸出 helloworld
 var num = 100
 var str = "foobar"
 
-println("\(str) \(num)")    // 輸出 foobar 100
+println("\(str) \(num)")    //output: foobar 100
 ```
 
 ### 註解
