@@ -59,4 +59,10 @@ var s2: String = "hello"
 
 Swift 也是一種非常龜毛的語言。常數、變數使用前必須給定初值，變數型別一旦決定就無法變更，整數overflow會crash，型別轉換必須顯式指定型別。
 ```swift
+var num1 = 100
+var num2: Int
+num1 = num2     //compile error!
+
+var str = "hello world"
+str = 123    //error: cannot assign a value of type 'Int' to a value of type 'String'
 ```
