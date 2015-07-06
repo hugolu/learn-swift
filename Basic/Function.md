@@ -1,7 +1,6 @@
 ## Function
 
 - [function 的格式](#format)
-- [function 的參數](#parameter)
 - [function 的多載](#overloading)
 - [function 不限數量的參數](#variadic_parameters)
 - [function 型別](#function_type)
@@ -41,10 +40,42 @@ func hi(friendName name: String) {
 hi(friendName: "John")    //output: Hello, John.
 ```
 
+自動產生內外同名的參數。
+```swift
+func hi(#name: String) {
+    println("Hello, \(name).")
+}
+
+hi(name: "John")    //output: Hello, John.
+```
+
+function 參數預設值 - 沒有傳入參數自動使用預設值。
+```swift
+func hi(name: String = "World") {
+    println("Hello, \(name).")
+}
+
+hi(name: "John")    //output: Hello, John.
+hi()                //output: Hello, world.
+```
+
+function 傳入參數為常數，若要修改要另外用 `var` 宣告。
+```swift
+func hi(name: String) {
+    name = "World"      // error: cannot assign to 'let' value 'name'
+    println("Hello, \(name).")
+}
+```
+```swift
+func hi(var name: String) {
+    name = "World"
+    println("Hello, \(name).")
+}
+
+hi("John")    //output: Hello, World.
+```
 
 
-<a name="parameter"></a>
-### function 的參數
 
 <a name="overloading"></a>
 ### function 的多載
