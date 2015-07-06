@@ -31,6 +31,12 @@ var name: String? = nil
 <a name="get_set"></a>
 ### 設定與讀取
 
+optional 設定方式與一般給值沒有差異。取值必須加上驚嘆號`!`，強制解開包裝 force-unwrap。
+```swift
+var age: Int? = 18
+age = age! + 1
+```
+
 <a name="check"></a>
 ### 檢查是否有值
 
