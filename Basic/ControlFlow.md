@@ -179,3 +179,11 @@ case 90...100:  "A"
 default:        "?"
 }
 ```
+
+for-in + range:
+```swift
+for num in 1...5 {
+    print(num)
+}   //output: 12345
+```
+
