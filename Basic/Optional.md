@@ -1,7 +1,30 @@
 ## Optional
 
-- [使用 Optional 的理由]
-- 
+- [使用 optional 的理由](#reasons)
+- [宣告](#declartion)
+- [設定與讀取](#get_set)
+- [檢查是否有值](#check)
+- [判斷並取值 (*optional binding*)](#optional_binding)
+- [自動取值 (*implicitly unwrapped optional*)](#implicitly_unwrapped_optional)
+- [無值給預設值](#double_question_mark)
 
-<a name="Reason"></a>
-### 使用 Optional 的理由
+<a name="reasons"></a>
+### 使用 optional 的理由
+
+<a name="declartion"></a>
+### 宣告
+
+<a name="get_set"></a>
+### 設定與讀取](#get_set)
+
+<a name="check"></a>
+### 檢查是否有值
+
+<a name="optional_binding"></a>
+### 判斷並取值 (*optional binding*)
+
+<a name="implicitly_unwrapped_optional"></a>
+### 自動取值 (*implicitly unwrapped optional*)
+
+<a name="double_question_mark"></a>
+### 無值給預設值
