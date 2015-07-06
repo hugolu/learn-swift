@@ -1,7 +1,7 @@
 ### 一元，二元和三元運算子
 
-* 一元運算子（*unary operator*）對單一操作物件操作，一元運算子分前綴運算子（*prefix*）和後綴運算子（*postfix*）。
-* 二元運算子（*binary operator*）操作兩個操作物件，是中綴的（*infix*），因為它們出現在兩個操作物件之間。
+* 一元運算子（*unary operator*）對單一操作物件操作，可做前綴（*prefix*）或後綴（*postfix*）。
+* 二元運算子（*binary operator*）操作兩個操作物件，它們出現在兩個操作物件之間，是中綴（*infix*）。
 * 三元運算子（*ternary operator*）操作三個操作物件。
 
 ```swift
