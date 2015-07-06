@@ -78,7 +78,7 @@ default:
 }
 ```
 
-可比較多個條件。
+可一次比較多個條件。
 ```switch
 var grade = 100
 
@@ -109,3 +109,5 @@ default:
 ### while-loop
 
 ### 指定範圍
+
+### 進階用法
