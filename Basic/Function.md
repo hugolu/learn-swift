@@ -16,6 +16,11 @@
 
 最簡單的function - 沒有參數，沒有回傳值。
 ```swift
+func hi() {
+    println("hello")
+}
+
+hi()    //output: hello
 ```
 
 <a name="parameter"></a>
