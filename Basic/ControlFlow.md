@@ -78,6 +78,17 @@ default:
 }
 ```
 
+可比較多個條件。
+```switch
+var grade = 100
+
+switch grade {
+case 0, 100:
+    "天才白痴一線間"    //執行
+default:
+    "平凡人"
+}
+```
 
 ### for
 
