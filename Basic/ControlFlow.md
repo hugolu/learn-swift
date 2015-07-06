@@ -142,4 +142,15 @@ do {
 
 ### 指定範圍
 
+使用 range operator，宣告某數字區間的範圍。
+```switch
+for num in 1...5 {
+    print(num)
+}   //output: 12345
+
+for num in 1..<5 {
+    print(num)
+}   //output: 1234
+```
+
 ### 進階用法
