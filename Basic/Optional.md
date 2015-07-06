@@ -90,9 +90,9 @@ age = age + 1   //fatal error: unexpectedly found nil while unwrapping an Option
 <a name="double_question_mark"></a>
 ### 無值給預設值
 
- 若希望在 optional 無值時給個預設值，可用雙問號 `??` 後面加預設值，這個應該是三元運算的語法糖。
- ```swift
- var age: Int? = nil
+若希望在 optional 無值時給個預設值，可用雙問號 `??` 後面加預設值，這個應該是三元運算的語法糖。
+```swift
+var age: Int? = nil
 
 var hisAge = age ?? 18
 var herAge = age != nil ? age! : 18
