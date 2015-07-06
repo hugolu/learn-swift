@@ -8,6 +8,15 @@
 var num = 123_456_789
 ```
 
+內建定義整數最大、最小值。
+```swift
+var uiMin = UInt.min    //0
+var uiMax = UInt.max    //18446744073709551615
+
+var iMin = Int.min      //-9223372036854775808
+var iMax = Int.max      //9223372036854775807
+```
+
 ### 浮點數 (`Float`、`Double`)
 
 使用`Double`(64-bit)、`Float`(32-bit)表達浮點數。
@@ -46,4 +55,6 @@ var s1 = "hello"
 var s2: String = "hello"
 ```
 
-### 型別檢查
+### 型別安全 (*Type Safety*)
+
+Swift 也是一種非常龜毛的語言。變數型別一旦決定就無法變更，常數、變數宣告必須給定初值，整數overflow會crash，型別轉換必須顯式指定型別。
