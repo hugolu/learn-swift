@@ -96,9 +96,12 @@ func baz() -> () {
 }
 ```
 
-
 <a name="overloading"></a>
 ### function 的多載
+
+function signature (簽名) 包含函式名稱、參數名稱、參數型別、回傳值。同名函式簽名不同可以同時存在。
+```swift
+```
 
 <a name="variadic_parameters"></a>
 ### function 不限數量的參數
