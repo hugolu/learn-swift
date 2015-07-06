@@ -1,3 +1,13 @@
+## 型別
+
+- [整數](#Integer)
+- [浮點數](#FloatingPoint)
+- [布林值](#Boolean)
+- [字串](#String)
+- [型別推斷](#TypeInference)
+- [型別安全](#TypeSafety)
+
+<a name="Integer"></a>
 ### 整數 (`Int`、`UInt`)
 
 內建有號整數型別：`Int8`、`Int16`、`Int32`、`Int64`。
@@ -17,6 +27,7 @@ var iMin = Int.min      //-9223372036854775808
 var iMax = Int.max      //9223372036854775807
 ```
 
+<a name="FloatingPoint"></a>
 ### 浮點數 (`Float`、`Double`)
 
 使用`Double`(64-bit)、`Float`(32-bit)表達浮點數。
@@ -24,6 +35,7 @@ var iMax = Int.max      //9223372036854775807
 var pi = 3.14159265359
 ```
 
+<a name="Boolean"></a>
 ### 布林值 (`Bool`)
 
 Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
@@ -31,6 +43,7 @@ Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
 var dream = true
 ```
 
+<a name="String"></a>
 ### 字串 (`String`)
 
 用兩個引號(`"`)包含的字串。
@@ -38,6 +51,7 @@ var dream = true
 var message = "hello world"
 ```
 
+<a name="TypeInference"></a>
 ### 型別推斷 (*Type Inference*)
 
 Swift 是一種很聰明的語言。通常能從`=`左邊推測右邊的變數或常數的型別，當然使用者也可以自行宣告。以下整數、浮點數、布林數、字串宣告方式顯式與隱式意義相同。
@@ -55,6 +69,7 @@ var s1 = "hello"
 var s2: String = "hello"
 ```
 
+<a name="TypeSafety"></a>
 ### 型別安全 (*Type Safety*)
 
 Swift 也是一種非常龜毛的語言。例如，宣告變數不能只宣告名稱，常數、變數使用前必須給定初值，變數型別一旦決定就無法變更，整數overflow會crash，型別轉換必須顯式指定型別。
