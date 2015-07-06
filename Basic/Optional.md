@@ -25,7 +25,7 @@ var age:Int = -1
 ```swift
 var age: Int?   //nil
 ```
-> `Int` 與 `?` 之間不可有空白。
+> `Int` 與 `?` 之間不可留空白。
 
 
 <a name="get_set"></a>
