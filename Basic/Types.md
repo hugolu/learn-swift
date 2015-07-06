@@ -61,8 +61,8 @@ Swift 也是一種非常龜毛的語言。常數、變數使用前必須給定�
 ```swift
 var num1 = 100
 var num2: Int
-num1 = num2     //compile error!
+num1 = num2     //error: variable 'num2' used before being initialized
 
 var str = "hello world"
-str = 123    //error: cannot assign a value of type 'Int' to a value of type 'String'
+str = 123       //error: cannot assign a value of type 'Int' to a value of type 'String'
 ```
