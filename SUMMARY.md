@@ -4,7 +4,7 @@
 * [基礎](Basic/README.md)
    * [從頭開始](Basic/FromScratchmd.md)
    * [型別](Basic/Types.md)
-   * [運算子](Basic/Operators.md)
+   * [運算子](Basic/Operators.md#if-else)
        * if-else
    * [流程控制](Basic/ControlFlow.md)
    * [Optional](Basic/Optional.md)
