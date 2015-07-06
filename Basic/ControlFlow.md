@@ -165,3 +165,17 @@ for num in stride(from: 9, to: 1, by: -2) {
 ```
 
 ### 進階用法
+
+switch + range：
+```swift
+var score = 65
+
+switch score {
+case 0..<60:    "E"
+case 60..<70:   "D" //執行
+case 70..<80:   "C"
+case 80..<90:   "B"
+case 90...100:  "A"
+default:        "?"
+}
+```
