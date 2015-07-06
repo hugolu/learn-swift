@@ -21,12 +21,12 @@ var age:Int = -1
 <a name="declartion"></a>
 ### 宣告
 
-型別後面加上問號 `?` 表示變數是個 optional。
+型別後面加上問號 `?` 表示變數是個 optional。optional 初始可以設定為 `nil`。
 ```swift
 var age: Int?   //nil
+var name: String? = nil
 ```
 > `Int` 與 `?` 之間不可留空白。
-
 
 <a name="get_set"></a>
 ### 設定與讀取](#get_set)
