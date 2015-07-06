@@ -81,5 +81,11 @@ age = age + 1
 println("I'm \(name), \(age) years old.")   //output: I'm Hugo, 19 years old.
 ```
 
+當然，如果你欺騙程式，它會死給你看。
+```swift
+var age: Int! = nil
+age = age + 1   //fatal error: unexpectedly found nil while unwrapping an Optional value
+```
+
 <a name="double_question_mark"></a>
 ### 無值給預設值
