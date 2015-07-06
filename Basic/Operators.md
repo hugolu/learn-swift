@@ -23,7 +23,7 @@ a > d ? "😀" : "😢"  //ternary operator
 ```
 
 <a name="Assignment"></a>
-### 指派運算子](#)（*Assignment Operator*）
+### 指派運算子]（#*Assignment Operator*）
 
 指派運算，用來初始化或更新變數的值。
 ```swift
