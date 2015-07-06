@@ -1,6 +1,7 @@
 本頁包含內容：
 
 - [if-else](#if_else)
+- [switch](#switch)
 
 <a name="if-else"></a>
 ### if-else
@@ -40,6 +41,7 @@ if true     //expectd '{' after 'if' condition
     num = 2
 ```
 
+<a name="switch"></a>
 ### switch
 
 條件判斷不需加`()`，要用也可以。
