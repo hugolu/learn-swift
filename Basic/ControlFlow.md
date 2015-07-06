@@ -106,6 +106,21 @@ default:
 
 ### for
 
+for-loop 條件判斷不需加`()`，要用也可以。判斷式結果必須是 `Bool`。複合判斷使用`&&`或`||`。`{}`不能省略。
+```swift
+for var i = 0; i < 3; i++ {
+    "hello world"
+}
+```
+
+for-in 從集合中取出元素逐一執行。
+```swift
+var friends = ["Eddy", "Gary", "Jimmy"]
+for friend in friends {
+    println("Hi, \(friend)!")
+}
+```
+
 ### while-loop
 
 ### 指定範圍
