@@ -1,9 +1,13 @@
 ## 運算子（*Operator*）
 
-- [一元，二元和三元運算子](#operator)
--
+- [一元，二元和三元運算子](#Operator)
+- [指派運算子](#Assignment)
+- [數值運算子](#Arithmetic)
+- [複合指派運算子](#CompoundAssignment)
+- [比較運算子](#Comparison)
+- [三元條件運算](#TernaryConditional)
 
-<a name="operator"></a>
+<a name="Operator"></a>
 ### 一元，二元和三元運算子
 
 * 一元運算子（*unary operator*）對單一操作物件操作，可做前綴（*prefix*）或後綴（*postfix*）。
@@ -18,7 +22,8 @@ var d = b+c         //binary operator
 a > d ? "😀" : "😢"  //ternary operator
 ```
 
-### 指派運算子（*Assignment Operator*）
+<a name="Assignment"></a>
+### 指派運算子](#)（*Assignment Operator*）
 
 指派運算，用來初始化或更新變數的值。
 ```swift
@@ -27,6 +32,7 @@ var a = 5
 a = b   // a 現在等於 10
 ```
 
+<a name="Arithmetic"></a>
 ### 數值運算子（*Arithmetic Operator*）
 
 * 加法（+）
@@ -51,6 +57,7 @@ x % 2 //=1
 -x    //=-5
 ```
 
+<a name="CompoundAssignment"</a>
 ### 複合指派運算子（*Compound Assignment Operator*）
 
 把其他運算子和指派運算（=）組合起來的複合指派運算子。
@@ -59,6 +66,7 @@ var a = 1
 a += 2 // a 現在是 3
 ```
 
+<a name="Comparison"></a>
 ### 比較運算子（*Comparison Operator*）
 
 * 等於（a == b）
@@ -76,6 +84,7 @@ a += 2 // a 現在是 3
 2 <= 1   // false
 ```
 
+<a name="TernaryConditional"></a>
 ### 三元條件運算（*Ternary Conditional Operator*）
 
 三元條件運算（`問題?答案1:答案2`）簡潔地表達根據問題成立與否作出二選一的操作。如果`問題`成立，回傳`答案1`的結果; 如果不成立，回傳`答案2`的結果。
