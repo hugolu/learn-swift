@@ -75,6 +75,28 @@ func hi(var name: String) {
 hi("John")    //output: Hello, World.
 ```
 
+function 內部改變參數值不影響外部。
+```swift
+func add(var num: Int) {
+    num = num + 1
+}
+
+var number = 10
+add(number)
+println(number) //output: 10
+```
+
+function 用 `inout` 宣告變數，函式內部改變參數值會同時作用到傳入的變數。
+```swift
+func add(inout num: Int) {
+    num = num + 1
+}
+
+var number = 10
+add(&number)
+println(number) //output: 11
+```
+
 function 可以有回傳值。
 ```swift
 func hi() -> String {
