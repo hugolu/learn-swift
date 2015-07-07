@@ -1,6 +1,7 @@
 ## Closure
 
 - [closure: 無名的 function](#function_without_name)
+- [接受參數的 closure](#closure_has_parameters)
 - [當作參數的 closure](#closure_as_parameter)
 - [能省則省的 closure](#omitted_stuffs)
 
@@ -9,26 +10,38 @@
 
 觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`say`儲存；第二個直接定義 closure 使用變數`say`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行然後加上`in`，其餘不變。
 ```swift
-func hi() {
+func greeting() {
     println("hello world")
 }
 
-var say = hi
-say()   //output: hello world
+var hi = greeting
+hi()   //output: hello world
 ```
 ```swift
-var say = { ()->() in
+var hi = { ()->() in
     println("hello world")
 }
 
-say()   //output: hello world
+hi()   //output: hello world
 ```
 > `say`的型別能從`=`右邊推測得知，型別定義`()->()`可以省略。
+
+<a name="closure_has_parameters"></a>
+### 接受參數的 closure
+
+closure 接受參數的用法與 function 雷同，直接看範例。
+```swift
+var hi = { (name: String)->() in
+    println("hello \(name)")
+}
+
+hi("hugo")   //output: hello hugo
+```
 
 <a name="closure_as_parameter"></a>
 ### 當作參數的 closure
 
-closure 用法與 function 雷同，直接看範例。
+closure 當作參數的用法與 function 雷同，直接看範例。
 ```swift
 func repeat(count: Int, action: ()->()) {
     for _ in 1...count {
