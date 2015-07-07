@@ -42,5 +42,19 @@ repeat(3, {
 })
 ```
 
+上面`repeat`呼叫方式可讀性不好，可把要傳入的 closure 拉到`()`最後面，這個技巧稱作 trailing closure。
+```swift
+func repeat(count: Int, action: ()->()) {
+    for _ in 1...count {
+        action()
+    }
+}
+
+repeat(3) {
+    ()->() in
+    println("hello world")  //output: hello world (3 times)
+}
+```
+
 <a name="omitted_stuffs"></a>
 ### 能省則省的 closure
