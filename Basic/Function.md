@@ -1,9 +1,9 @@
 ## Function
 
 - [function 的格式](#format)
-- [function 的多載](#overloading)
 - [function 不限數量的參數](#variadic_parameters)
 - [function 型別](#function_type)
+- [function 的多載](#overloading)
 - [function 當作參數傳遞](#function_as_parameter)
 - [function 當作回傳值](#function_as_return)
 - [巢狀 function](#nested_function)
@@ -118,6 +118,22 @@ func baz() -> () {
 }
 ```
 
+<a name="variadic_parameters"></a>
+### function 不限數量的參數（*Variadic Parameters*）
+
+- 不限數量參數必須放在餐數列最後
+- 最多只能有一個參數是不限數量參數
+
+```swift
+func hi(adjective: String, pets: String...) {
+    for pet in pets {
+        print("\(adjective) \(pet), ")
+    }
+}
+
+hi("cute", "dog", "cat", "rabbit"); //output: cute dog, cute cat, cute rabbit,
+```
+
 <a name="overloading"></a>
 ### function 的多載
 
@@ -159,21 +175,6 @@ var str: String = hi("world")   //return: "hello world"
 var cnt: Int = hi("world")      //return: 5
 ```
 
-<a name="variadic_parameters"></a>
-### function 不限數量的參數（*Variadic Parameters*）
-
-- 不限數量參數必須放在餐數列最後
-- 最多只能有一個參數是不限數量參數
-
-```swift
-func hi(adjective: String, pets: String...) {
-    for pet in pets {
-        print("\(adjective) \(pet), ")
-    }
-}
-
-hi("cute", "dog", "cat", "rabbit"); //output: cute dog, cute cat, cute rabbit,
-```
 
 <a name="function_type"></a>
 ### function 型別
