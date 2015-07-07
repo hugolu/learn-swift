@@ -69,6 +69,5 @@ repeat(3) {
 }
 ```
 
-
 <a name="omitted_stuffs"></a>
 ### 能省則省的 closure
