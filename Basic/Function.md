@@ -153,6 +153,21 @@ add(5)  //return: 10
 
 function signature (簽名) 包含函式名稱、參數名稱、參數型別、回傳值。同名函式簽名不同可以同時存在。
 ```swift
+func hi() {
+    println("hello world")
+}
+
+func hi() -> String {
+    return "hello world"
+}
+
+var hi_1: ()->() = hi
+var hi_2: ()->String = hi
+
+hi_1()  //output: hello world
+hi_2()  //return: "hello world"
+```
+```swift
 func hi(something: String) {
     println("hello \(something)")
 }
