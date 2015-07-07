@@ -204,16 +204,82 @@ var str: String = hi("world")   //return: "hello world"
 var cnt: Int = hi("world")      //return: 5
 ```
 
-
-
 <a name="function_as_parameter"></a>
 ### function 當作參數傳遞
+
+```swift
+func foo() {
+    print("foo")
+}
+
+func bar() {
+    print("bar")
+}
+
+func repeat(count: Int, action: ()->()) {
+    for _ in 1...count {
+        action()
+    }
+}
+
+repeat(3, foo)  //output: foofoofoo
+repeat(3, bar)  //output: barbarbar
+```
+
+- `repeat`裡面for-in的計數器不重要，可用底線`_`取代。
+- `action`型別為`()->()`，沒有傳入參數，也沒有回傳值。
+- 傳入`repeat`的第二個的參數必須合乎`()->()`的條件。
 
 <a name="function_as_return"></a>
 ### function 當作回傳值
 
+```swift
+func foo() -> String {
+    return "foo"
+}
+
+func bar() -> String {
+    return "bar"
+}
+
+func murmur(mood: Int) -> ()->String {
+    return mood % 2 == 0 ? foo : bar
+}
+
+var doStuff: ()->String = murmur(5)
+doStuff()   //return: "bar"
+```
+
+- `murmur`回傳型別為 function，定義為`()->String`，沒有傳入值，回傳值為`String`。
+- 儲存`murmur`回傳值的變數型別必須定義為`()->String`。
+
 <a name="nested_function"></a>
 ### 巢狀 function
+
+function 包含 function 的用法叫做 nested function。
+```swift
+func murmur(mood: Int) -> ()->String {
+    func foo() -> String {
+        return "foo"
+    }
+    
+    func bar() -> String {
+        return "bar"
+    }
+    
+    return mood % 2 == 0 ? foo : bar
+}
+
+var doStuff: ()->String = murmur(5)
+doStuff()   //return: "bar"
+```
+
+理論上外層 function 執行完他擁有的 context 就會消失，但 nested funtion 有個神奇的能力 - 回傳的 function 可以存取以下資料：
+1. 傳給自己的參數
+2. 傳給外層function的參數
+3. 自己宣告的變數（常數）
+4. 外層function宣告的變數（常數）
+5. 最外層的全域變數（常數）
 
 <a name="function_and_optional"></a>
 ### function 與 optional
