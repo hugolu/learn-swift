@@ -134,6 +134,20 @@ func hi(adjective: String, pets: String...) {
 hi("可愛的", "小狗", "小貓", "小兔"); //output: 可愛的小狗, 可愛的小貓, 可愛的小兔,
 ```
 
+<a name="function_type"></a>
+### function 型別
+
+function 型別由參數型別與回傳型別共同定義。function 型別也是型別的一懂，所以也可以使用變數指向function。
+```swift
+func add5(num: Int) -> Int {
+    return num + 5
+}
+
+var add: (Int)->Int = add5
+add(5)  //return: 10
+```
+> `add`變數型別為`(Int)->Int`，呼叫時加上`()`，括號內填上符合 function 定義的參數。
+
 <a name="overloading"></a>
 ### function 的多載
 
@@ -176,8 +190,6 @@ var cnt: Int = hi("world")      //return: 5
 ```
 
 
-<a name="function_type"></a>
-### function 型別
 
 <a name="function_as_parameter"></a>
 ### function 當作參數傳遞
