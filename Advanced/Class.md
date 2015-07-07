@@ -4,7 +4,7 @@
 - [物件初始化](#object_initialization)
 - [物件的屬性（property）](#object_property)
 - [物件的方法（method）](#object_method)
-- [optional object](#optional_object)
+- [optional 物件變數](#optional_object_variable)
 - [類別的繼承](#class_inheritance)
 - [方法與屬性的覆寫](#overriding)
 - [類別的方法與屬性](#class_method_property)
@@ -22,8 +22,8 @@
 <a name="object_method"></a>
 ### 物件的方法（method）
 
-<a name="optional_object"><a>
-### optional object
+<a name="optional_object_variable"><a>
+### optional 物件變數
 
 <a neme="class_inheritance"></a>
 ### 類別的繼承
