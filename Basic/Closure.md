@@ -7,7 +7,7 @@
 <a name="function_without_name"></a>
 ### closure: 無名的 function
 
-觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`say`儲存；第二的直接定義一個 closure 使用變數`say`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行
+觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`say`儲存；第二的直接定義一個 closure 使用變數`say`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行然後加上`in`，其餘不變，舞照跳馬照跑。
 ```swift
 func hi() {
     println("hello world")
