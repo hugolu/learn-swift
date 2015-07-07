@@ -4,6 +4,10 @@
 - [物件初始化](#object_initialization)
 - [物件的屬性（property）](#object_property)
 - [物件的方法（method）](#object_method)
+- [類別的繼承](#class_inheritance)
+- [方法與屬性的覆寫](#overriding)
+- [類別的方法與屬性](#class_method_property)
+- [權限管理](#access_control)
 - [物件與 optional](#object_and_optional)
 
 <a name="object_and_class"></a>
@@ -17,6 +21,18 @@
 
 <a name="object_method"></a>
 ### 物件的方法（method）
+
+<a neme="class_inheritance"></a>
+### 類別的繼承
+
+<a name="overriding"></a>
+### 方法與屬性的覆寫
+
+<a name="class_method_property"></a>
+### 類別的方法與屬性
+
+<a name="access_control"></a>
+### 權限管理
 
 <a name="object_and_optional"><a>
 ### 物件與 optional
