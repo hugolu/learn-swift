@@ -275,11 +275,29 @@ doStuff()   //return: "bar"
 ```
 
 理論上外層 function 執行完他擁有的 context 就會消失，但 nested funtion 有個神奇的能力 - 回傳的 function 可以存取以下資料：
-1. 傳給自己的參數
-2. 傳給外層function的參數
-3. 自己宣告的變數（常數）
-4. 外層function宣告的變數（常數）
+1. 自己宣告的變數（常數）
+2. 傳給自己的參數
+3. 外層function宣告的變數（常數）
+4. 傳給外層function的參數
 5. 最外層的全域變數（常數）
+```swift
+let globalVar = "global value"
+
+func extFunc(extArg: String) -> (String)->String {
+    var extVar = "external variable"
+    
+    func intFunc(intArg: String) -> String {
+        var intVar = "internal variable"
+        
+        return "access to \(intVar), \(intArg), \(extVar), \(extArg), \(globalVar)"
+    }
+    
+    return intFunc
+}
+
+var magicFunc = extFunc("external argument")
+magicFunc("internal argument") //return: "access to internal variable, internal argument, external variable, external argument, global value"
+```
 
 <a name="function_and_optional"></a>
 ### function 與 optional
