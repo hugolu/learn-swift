@@ -84,3 +84,55 @@ repeat(3) {
 
 <a name="omitted_stuffs"></a>
 ### 能省則省的 closure
+
+先來個囉唆的完整版。
+```swift
+func repeat(count: Int, action: (Int, String) -> String) {
+    for i in 1...count {
+        action(i, "hello")
+    }
+}
+
+repeat(3) {
+    (index: Int, message: String) -> String in
+    return "第\(index)次說\(message)"
+}
+//output: 第1次說hello
+//output: 第2次說hello
+//output: 第3次說hello
+```
+
+省略回傳型別。
+```swift
+repeat(3) {
+    (index: Int, message: String) in
+    return "第\(index)次說\(message)"
+}
+```
+
+省略參數型別。
+```swift
+repeat(3) {
+    index, message in
+    return "第\(index)次說\(message)"
+}
+```
+
+省略參數。
+```swift
+repeat(3) {
+    return "第\($0)次說\($1)"
+}
+```
+
+省略 return。
+```swift
+repeat(3) {
+    "第\($0)次說\($1)"
+}
+```
+
+最終精簡版本。
+```swift
+repeat(3) { "第\($0)次說\($1)" }
+```
