@@ -56,5 +56,19 @@ repeat(3) {
 }
 ```
 
+上面 closure 內的`()->() in`可以省略，因為傳入的參數型別已經定義在`action`上。
+```swift
+func repeat(count: Int, action: ()->()) {
+    for _ in 1...count {
+        action()
+    }
+}
+
+repeat(3) {
+    println("hello world")  //output: hello world (3 times)
+}
+```
+
+
 <a name="omitted_stuffs"></a>
 ### 能省則省的 closure
