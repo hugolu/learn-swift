@@ -280,6 +280,7 @@ doStuff()   //return: "bar"
 3. 外層function宣告的變數（常數）
 4. 傳給外層function的參數
 5. 最外層的全域變數（常數）
+
 ```swift
 let globalVar = "global value"
 
