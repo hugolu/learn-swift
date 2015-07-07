@@ -127,11 +127,11 @@ func baz() -> () {
 ```swift
 func hi(adjective: String, pets: String...) {
     for pet in pets {
-        print("\(adjective) \(pet), ")
+        print("\(adjective)\(pet), ")
     }
 }
 
-hi("cute", "dog", "cat", "rabbit"); //output: cute dog, cute cat, cute rabbit,
+hi("可愛的", "小狗", "小貓", "小兔"); //output: 可愛的小狗, 可愛的小貓, 可愛的小兔,
 ```
 
 <a name="overloading"></a>
