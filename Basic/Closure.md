@@ -28,5 +28,19 @@ say()   //output: hello world
 <a name="closure_as_parameter"></a>
 ### 當作參數的 closure
 
+closure 用法與 function 雷同，直接看範例。
+```swift
+func repeat(count: Int, action: ()->()) {
+    for _ in 1...count {
+        action()
+    }
+}
+
+repeat(3, {
+    ()->() in
+    println("hello world")  //output: hello world (3 times)
+})
+```
+
 <a name="omitted_stuffs"></a>
 ### 能省則省的 closure
