@@ -300,8 +300,47 @@ var magicFunc = extFunc("external argument")
 magicFunc("internal argument") //return: "access to internal variable, internal argument, external variable, external argument, global value"
 ```
 
+既然內層 function 可以存取外層 function 的參數與變數（常數），那就能做一些神奇的事情。
+
 <a name="function_and_optional"></a>
 ### function 與 optional
 
+function 的參數與回傳值也可以是 optional。
+```swift
+func hi(name: String!) -> String? {
+    return name != nil ? "hi, \(name)" : nil
+}
+
+hi("hugo")  //return: "hi, hugo"
+hi(nil)     //return: nil
+```
 <a name="curried_function"></a>
 ### curried function
+
+curried function 就是直接呼叫 nested function 回傳的 function，執行時會像下面`herSalary`呼叫`paySalary`時串接兩個`()`，雖簡潔卻犧牲可讀性。
+```swift
+func paySalary(salary: Int) -> (Int)->Int {
+    func addBonus(bonus: Int) -> Int {
+        return salary + bonus
+    }
+    return addBonus
+}
+
+var pay = paySalary(22_000)
+var hisSalary = pay(1_000)                      //return: 23000
+
+var herSalary = paySalary(44_000)(1_000)        //return: 45000
+```
+
+另一種 curried function 定義方式如下，簡單來說就是把內外兩層 function 混在一起做撒尿牛丸。`herSalary`呼叫`paySalary`的方式和前一個範例有一點點不同，第二個`()`裡面要包含參數名稱，否則會編譯錯誤。
+```swift
+func paySalary(salary: Int) (bonus: Int)->Int {
+    return salary + bonus
+}
+
+var pay = paySalary(22_000)
+var hisSalary = pay(bonus: 1_000)               //return: 23000
+
+var herSalary = paySalary(44_000)(bonus: 1_000) //return: 45000
+```
+> 方便簡潔是把雙面刃，請永遠記住"Write Code for Humans not Machines"。
