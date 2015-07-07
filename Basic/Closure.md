@@ -102,7 +102,7 @@ repeat(3) {
 //output: 第3次說hello
 ```
 
-省略回傳型別。
+以下範例省略回傳型別。
 ```swift
 repeat(3) {
     (index: Int, message: String) in
@@ -110,7 +110,7 @@ repeat(3) {
 }
 ```
 
-省略參數型別。
+以下範例省略參數型別。
 ```swift
 repeat(3) {
     index, message in
@@ -118,21 +118,21 @@ repeat(3) {
 }
 ```
 
-省略參數。
+以下範例省略參數。
 ```swift
 repeat(3) {
     return "第\($0)次說\($1)"
 }
 ```
 
-省略 return。
+以下範例省略 return。
 ```swift
 repeat(3) {
     "第\($0)次說\($1)"
 }
 ```
 
-最終精簡版本。
+以下範例是最終精簡版本。
 ```swift
 repeat(3) { "第\($0)次說\($1)" }
 ```
