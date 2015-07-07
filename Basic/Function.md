@@ -86,7 +86,7 @@ add(number)
 println(number) //output: 10
 ```
 
-function 用 `inout` 宣告變數，函式內部改變參數值會同時作用到傳入的變數，呼叫函式`inout`參數前要加`&`。
+function 用`inout`宣告變數，函式內部改變參數值會同時作用到傳入的變數，呼叫函式`inout` 參數前要加`&`。
 ```swift
 func add(inout num: Int) {
     num = num + 1
@@ -97,7 +97,7 @@ add(&number)
 println(number) //output: 11
 ```
 
-function 可以有回傳值。
+function 可以有回傳值，透過`->`告知回傳值的型別。
 ```swift
 func hi() -> String {
     return "Hello, World."
