@@ -11,7 +11,7 @@
 - [權限管理](#access_control)
 
 <a name="object_and_class"></a>
-### 物件與類別
+### 物件與類別 (class & object)
 
 <a name="object_initialization"></a>
 ### 物件初始化
