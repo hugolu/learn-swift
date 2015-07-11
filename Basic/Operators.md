@@ -26,6 +26,7 @@ a > d ? "😀" : "😢"  //ternary operator
 ### 指派運算子（*Assignment Operator*）
 
 指派運算，用來初始化或更新變數的值。
+
 ```swift
 let b = 10
 var a = 5
@@ -44,6 +45,7 @@ a = b   // a 現在等於 10
 * 累減（--）
 * 一元負號（-）
 * 一元正號（+）
+
 ```swift
 var x = 5
 x + 2 //=7
@@ -61,6 +63,7 @@ x % 2 //=1
 ### 複合指派運算子（*Compound Assignment Operator*）
 
 把其他運算子和指派運算（=）組合起來的複合指派運算子。
+
 ```swift
 var a = 1
 a += 2 // a 現在是 3
@@ -75,6 +78,7 @@ a += 2 // a 現在是 3
 * 小於（a < b）
 * 大於等於（a >= b）
 * 小於等於（a <= b）
+
 ```swift
 1 == 1   // true
 2 != 1   // true
@@ -88,6 +92,7 @@ a += 2 // a 現在是 3
 ### 三元條件運算（*Ternary Conditional Operator*）
 
 三元條件運算（`問題?答案1:答案2`）簡潔地表達根據問題成立與否作出二選一的操作。如果`問題`成立，回傳`答案1`的結果; 如果不成立，回傳`答案2`的結果。
+
 ```swift
 var num = -10
 var abs: Int

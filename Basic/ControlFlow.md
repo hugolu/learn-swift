@@ -11,6 +11,7 @@
 ### if-else
 
 條件判斷不需加`()`，要用也可以。
+
 ```swift
 var num = -10
 var abs: Int
@@ -23,6 +24,7 @@ if num > 0 {
 ```
 
 判斷式結果必須是 `Bool`。
+
 ```swift
 var num = 0
 if num {    //error: type 'Int' does not conform to protocol 'BooleanType'
@@ -30,6 +32,7 @@ if num {    //error: type 'Int' does not conform to protocol 'BooleanType'
 ```
 
 複合判斷使用`&&`或`||`。
+
 ```swift
 var weekend = true
 var sunny = true
@@ -39,6 +42,7 @@ if weekend && sunny {
 ```
 
 條件成立時，就算只執行一行程式也不能省略`{}`。
+
 ```swift
 var num = 1
 if true     //expectd '{' after 'if' condition
@@ -49,6 +53,7 @@ if true     //expectd '{' after 'if' condition
 ### switch
 
 條件判斷不需加`()`，要用也可以。
+
 ```swift
 var score = 0
 
@@ -63,6 +68,7 @@ default:
 ```
 
 一定要包含所有`case`，或是使用`default`捕捉剩下的情況。
+
 ```swift
 var score = 0
 
@@ -90,6 +96,7 @@ default:
 ```
 
 可一次比較多個條件。
+
 ```switch
 var grade = 100
 
@@ -102,6 +109,7 @@ default:
 ```
 
 可比較任何型別。
+
 ```swift
 var fruit = "蘋果"
 
@@ -119,6 +127,7 @@ default:
 ### for
 
 for-loop 條件判斷不需加`()`，要用也可以。判斷式結果必須是 `Bool`。複合判斷使用`&&`或`||`。`{}`不能省略。
+
 ```swift
 for var num = 0; num < 3; num++ {
     "hello world"
@@ -126,6 +135,7 @@ for var num = 0; num < 3; num++ {
 ```
 
 for-in 從集合中取出元素逐一執行。
+
 ```swift
 var friends = ["Eddy", "Gary", "Jimmy"]
 for friend in friends {
@@ -139,6 +149,7 @@ for friend in friends {
 ### while-loop, do-while
 
 兩種用法，直接看範例。
+
 ```swift
 var num = 10
 
@@ -157,6 +168,7 @@ do {
 ### 指定範圍
 
 使用 range operator，宣告某數字區間的範圍。（限制：只能遞增，每次+1）
+
 ```switch
 for num in 1...5 {
     print(num)
@@ -168,6 +180,7 @@ for num in 1..<5 {
 ```
 
 使用 stride，更靈活宣告範圍。
+
 ```swift
 for num in stride(from: 9, through: 1, by: -2) {
     print(num)
@@ -182,6 +195,7 @@ for num in stride(from: 9, to: 1, by: -2) {
 ### 進階用法
 
 switch + range：
+
 ```swift
 var score = 65
 
@@ -196,6 +210,7 @@ default:        "?"
 ```
 
 for-in + range:
+
 ```swift
 for num in 1...5 {
     print(num)

@@ -14,11 +14,13 @@
 內建無號整數型別：`UInt8`、`UInt16`、`UInt32`、`UInt64`。
 
 `Int`等同`Int64`，`UInt`等同`UInt64`。表達時可用底線(`_`)增加可讀性。
+
 ```swift
 var num = 123_456_789
 ```
 
 內建定義整數最大、最小值。
+
 ```swift
 var uiMin = UInt.min    //0
 var uiMax = UInt.max    //18446744073709551615
@@ -31,6 +33,7 @@ var iMax = Int.max      //9223372036854775807
 ### 浮點數 (`Float`、`Double`)
 
 使用`Double`(64-bit)、`Float`(32-bit)表達浮點數。
+
 ```swift
 var pi = 3.14159265359
 ```
@@ -39,6 +42,7 @@ var pi = 3.14159265359
 ### 布林值 (`Bool`)
 
 Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
+
 ```swift
 var dream = true
 ```
@@ -47,6 +51,7 @@ var dream = true
 ### 字串 (`String`)
 
 用兩個引號(`"`)包含的字串。
+
 ```swift
 var message = "hello world"
 ```
@@ -55,6 +60,7 @@ var message = "hello world"
 ### 型別推斷 (*Type Inference*)
 
 Swift 是一種很聰明的語言。通常能從`=`左邊推測右邊的變數或常數的型別，當然使用者也可以自行宣告。以下整數、浮點數、布林數、字串宣告方式顯式與隱式意義相同。
+
 ```swift
 var i1 = 123
 var i2: Int = 123
@@ -73,6 +79,7 @@ var s2: String = "hello"
 ### 型別安全 (*Type Safety*)
 
 Swift 也是一種非常龜毛的語言。例如，宣告變數不能只宣告名稱，常數、變數使用前必須給定初值，變數型別一旦決定就無法變更，整數overflow會crash，型別轉換必須顯式指定型別。
+
 ```swift
 var num             //error: type annotation missing in pattern
 num = 1

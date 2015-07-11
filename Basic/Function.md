@@ -14,6 +14,7 @@
 ### function 的格式
 
 最簡單的 function - 沒有參數，沒有回傳值。
+
 ```swift
 func hi() {
     println("hello")
@@ -23,6 +24,7 @@ hi()    //output: hello
 ```
 
 接受參數的 function。
+
 ```swift
 func hi(name: String) {
     println("Hello, \(name).")
@@ -32,6 +34,7 @@ hi("John")    //output: Hello, John.
 ```
 
 雙重名稱的參數，內部、外部使用。
+
 ```swift
 func hi(friendName name: String) {
     println("Hello, \(name).")
@@ -41,6 +44,7 @@ hi(friendName: "John")    //output: Hello, John.
 ```
 
 自動產生內外同名的參數。
+
 ```swift
 func hi(#name: String) {
     println("Hello, \(name).")
@@ -50,6 +54,7 @@ hi(name: "John")    //output: Hello, John.
 ```
 
 function 參數預設值 - 沒有傳入參數自動使用預設值。
+
 ```swift
 func hi(name: String = "World") {
     println("Hello, \(name).")
@@ -60,12 +65,14 @@ hi()                //output: Hello, world.
 ```
 
 function 傳入參數為常數，若要修改要另外用 `var` 宣告。
+
 ```swift
 func hi(name: String) {
     name = "World"      // error: cannot assign to 'let' value 'name'
     println("Hello, \(name).")
 }
 ```
+
 ```swift
 func hi(var name: String) {
     name = "World"
@@ -76,6 +83,7 @@ hi("John")    //output: Hello, World.
 ```
 
 function 內部改變參數值不影響外部。
+
 ```swift
 func add(var num: Int) {
     num = num + 1
@@ -87,6 +95,7 @@ println(number) //output: 10
 ```
 
 function 用`inout`宣告變數，函式內部改變參數值會同時作用到傳入的變數，呼叫函式`inout` 參數前要加`&`。
+
 ```swift
 func add(inout num: Int) {
     num = num + 1
@@ -98,6 +107,7 @@ println(number) //output: 11
 ```
 
 function 可以有回傳值，透過`->`告知回傳值的型別。
+
 ```swift
 func hi() -> String {
     return "Hello, World."
@@ -107,6 +117,7 @@ hi()    //return: "Hello, World."
 ```
 
 function 沒有回傳值可以這麼宣告。
+
 ```swift
 func foo() {
 }
@@ -138,6 +149,7 @@ hi("可愛的", "小狗", "小貓", "小兔"); //output: 可愛的小狗, 可愛
 ### function 型別
 
 function 型別由參數型別與回傳型別共同定義。function 型別也是型別的一懂，所以也可以使用變數指向function。
+
 ```swift
 func add5(num: Int) -> Int {
     return num + 5
@@ -146,12 +158,14 @@ func add5(num: Int) -> Int {
 var add: (Int)->Int = add5
 add(5)  //return: 10
 ```
+
 > `add`變數型別為`(Int)->Int`，呼叫時加上`()`，括號內填上符合 function 定義的參數。
 
 <a name="overloading"></a>
 ### function 的多載
 
 function signature (簽名) 包含函式名稱、參數名稱、參數型別、回傳值。同名函式簽名不同可以同時存在。
+
 ```swift
 func hi() {
     println("hello world")
@@ -167,6 +181,7 @@ var hi_2: ()->String = hi
 hi_1()  //output: hello world
 hi_2()  //return: "hello world"
 ```
+
 ```swift
 func hi(something: String) {
     println("hello \(something)")
@@ -179,6 +194,7 @@ func hi(something: Int) {
 hi(123)     //output: hello 123
 hi("world") //output: hello world
 ```
+
 ```swift
 func hi(name something: String) {
     println("hello \(something)")
@@ -191,6 +207,7 @@ func hi(food something: String) {
 hi(name: "Hugo")    //output: hello Hugo
 hi(food: "Banana")  //output: hello Banana
 ```
+
 ```swift
 func hi(something: String) -> String {
     return "hello \(something)"
@@ -257,6 +274,7 @@ doStuff()   //return: "bar"
 ### 巢狀 function
 
 function 包含 function 的用法叫做 nested function。
+
 ```swift
 func murmur(mood: Int) -> ()->String {
     func foo() -> String {
@@ -306,6 +324,7 @@ magicFunc("internal argument") //return: "access to internal variable, internal 
 ### function 與 optional
 
 function 的參數與回傳值也可以是 optional。
+
 ```swift
 func hi(name: String!) -> String? {
     return name != nil ? "hi, \(name)" : nil
@@ -314,10 +333,12 @@ func hi(name: String!) -> String? {
 hi("hugo")  //return: "hi, hugo"
 hi(nil)     //return: nil
 ```
+
 <a name="curried_function"></a>
 ### curried function
 
 curried function 就是直接呼叫 nested function 回傳的 function，執行時會像下面`herSalary`呼叫`paySalary`時串接兩個`()`，雖簡潔卻犧牲可讀性。
+
 ```swift
 func paySalary(salary: Int) -> (Int)->Int {
     func addBonus(bonus: Int) -> Int {
@@ -333,6 +354,7 @@ var herSalary = paySalary(44_000)(1_000)        //return: 45000
 ```
 
 另一種 curried function 定義方式如下，簡單來說就是把內外兩層 function 混在一起做撒尿牛丸。`herSalary`呼叫`paySalary`的方式和前一個範例有一點點不同，第二個`()`裡面要包含參數名稱，否則會編譯錯誤。
+
 ```swift
 func paySalary(salary: Int) (bonus: Int)->Int {
     return salary + bonus
@@ -343,4 +365,5 @@ var hisSalary = pay(bonus: 1_000)               //return: 23000
 
 var herSalary = paySalary(44_000)(bonus: 1_000) //return: 45000
 ```
+
 > 方便簡潔是把雙面刃，請永遠記住"Write Code for Humans not Machines"。
