@@ -4,7 +4,7 @@
 - [宣告](#declartion)
 - [設定與讀取](#get_set)
 - [檢查是否有值](#check)
-- [判斷並取值 (*optional binding*)](#optional_binding)
+- [判斷取值 (*optional binding*)](#optional_binding)
 - [自動取值 (*implicitly unwrapped optional*)](#implicitly_unwrapped_optional)
 - [無值給預設值](#double_question_mark)
 
@@ -22,11 +22,11 @@ var age:Int = -1
 <a name="declartion"></a>
 ### 宣告
 
-型別後面加上問號 `?` 表示變數是個 optional。optional 初始可以設定為 `nil`。
+型別後面加上問號`?`表示變數是個 optional。optional 預設值為`nil`，宣告後不賦值即設為預設值。
 
 ```swift
-var age: Int?   //nil
-var name: String? = nil
+var age: Int?   			//return: nil
+var name: String? = nil		//return: nil
 ```
 
 > `Int` 與 `?` 之間不可留空白。
@@ -34,7 +34,7 @@ var name: String? = nil
 <a name="get_set"></a>
 ### 設定與讀取
 
-optional 設定方式與一般給值沒有差異。取值必須加上驚嘆號`!`，強制解開包裝（*force-unwrap*）。
+optional 設定方式與一般給值沒有差異。取值必須加上驚嘆號`!`，強制解開包裝(*force-unwrap*)。
 
 ```swift
 var age: Int? = 18
@@ -44,11 +44,11 @@ age = age! + 1
 <a name="check"></a>
 ### 檢查是否有值
 
-強制解開一個 `nil` 的optional，會讓程式炸掉。
+強制解開一個值為`nil`的optional，會讓程式炸掉。
 
 ``` switch
 var age: Int?
-age! //fatal error: unexpectedly found nil while unwrapping an Optional value
+age = age! + 1  //fatal error: unexpectedly found nil while unwrapping an Optional value
 ```
 
 optional 取值前要先判斷是否為nil。
@@ -62,9 +62,9 @@ if age != nil {
 ```
 
 <a name="optional_binding"></a>
-### 判斷並取值 (*optional binding*)
+### 判斷取值 (*optional binding*)
 
-先判斷是否為 `nil`，再使用 `!` 取值方式太囉唆，optional binding技巧將兩步驟合併為一個。
+先判斷是否為`nil`，再使用`!`取值方式太囉唆，判斷取值技巧將兩步驟合併為一個。
 
 ```swift
 var age: Int? = 20
@@ -74,13 +74,13 @@ if let ageNum = age {
 }
 ```
 
-* 若 age 有值，得到 ageNum=20 型別為 `Int`，使用 ageNum 不需透過 `!` 強制解開包裝。
+* 若 age 有值，得到 ageNum=20 型別為`Int`，使用 ageNum 不需透過`!`強制解開包裝。
 * 若 age 無值，`{}`內程式不會被執行。
 
 <a name="implicitly_unwrapped_optional"></a>
 ### 自動取值 (*implicitly unwrapped optional*)
 
-如果變數或常數一旦給值後就不會再變回無值的狀態，可以利用自動取值的方式宣告。型別後面加上問號 `!` 表示變數是個 implicitly unwrapped optional。
+如果變數或常數一旦給值後就不會再變回無值的狀態，可以利用自動取值的方式宣告。型別後面加上問號`!` 表示變數是個 implicitly unwrapped optional。
 
 ```swift
 let name: String! = "Hugo"
@@ -90,7 +90,7 @@ age = age + 1
 println("I'm \(name), \(age) years old.")   //output: I'm Hugo, 19 years old.
 ```
 
-當然，如果你欺騙程式，它會死給你看。
+當然，如果欺騙程式，它會死給你看。
 
 ```swift
 var age: Int! = nil
@@ -100,7 +100,7 @@ age = age + 1   //fatal error: unexpectedly found nil while unwrapping an Option
 <a name="double_question_mark"></a>
 ### 無值給預設值
 
-若希望在 optional 無值時給個預設值，可用雙問號 `??` 後面加預設值，這個應該是三元運算的語法糖。
+若希望在 optional 無值時給個預設值，可用雙問號`??`後面加預設值，這個應該是三元運算的語法糖。
 
 ```swift
 var age: Int? = nil

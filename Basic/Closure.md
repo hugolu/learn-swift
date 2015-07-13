@@ -8,14 +8,14 @@
 <a name="function_without_name"></a>
 ### closure: 無名的 function
 
-觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`say`儲存；第二個直接定義 closure 使用變數`say`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行然後加上`in`，其餘不變。
+觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`hi`儲存；第二個直接定義 closure 使用變數`hi`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行然後加上`in`，其餘不變。
 
 ```swift
 func greeting() {
     println("hello world")
 }
-
 var hi = greeting
+
 hi()   //output: hello world
 ```
 
@@ -27,7 +27,7 @@ var hi = { ()->() in
 hi()   //output: hello world
 ```
 
-> `say`的型別能從`=`右邊推測得知，型別定義`()->()`可以省略。
+> `hi`的型別能從`=`右邊推測得知，型別定義`()->()`可以省略。
 
 <a name="closure_has_parameters"></a>
 ### 接受參數的 closure
@@ -110,7 +110,7 @@ repeat(3) {
 //output: 第3次說hello
 ```
 
-以下範例省略回傳型別。
+以下範例省略回傳型別 (回傳型別由`action`定義)。
 
 ```swift
 repeat(3) {
@@ -119,7 +119,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略參數型別。
+以下範例省略參數型別 (參數型別由`action`定義)。
 
 ```swift
 repeat(3) {
@@ -128,7 +128,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略參數。
+以下範例省略參數名稱 (第一個參數名預設為$0, 第二個參數名預設為$1，以此類推)。
 
 ```swift
 repeat(3) {
@@ -136,7 +136,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略 return。
+以下範例省略`return` (closure 最後一個 statement 的結果預設為回傳值，可以不加`return`)。
 
 ```swift
 repeat(3) {

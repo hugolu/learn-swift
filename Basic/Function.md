@@ -13,6 +13,8 @@
 <a name="format"></a>
 ### function 的格式
 
+使用`func`關鍵字定義 function，接著宣告 function name，然後使用`()`宣告參數列表，如果有回傳值則使用`->`宣告回傳值的型別。
+
 最簡單的 function - 沒有參數，沒有回傳值。
 
 ```swift
@@ -43,7 +45,7 @@ func hi(friendName name: String) {
 hi(friendName: "John")    //output: Hello, John.
 ```
 
-自動產生內外同名的參數。
+參數前面加`#`自動產生內外同名的參數。
 
 ```swift
 func hi(#name: String) {
@@ -53,7 +55,7 @@ func hi(#name: String) {
 hi(name: "John")    //output: Hello, John.
 ```
 
-function 參數預設值 - 沒有傳入參數自動使用預設值。
+function 參數預設值 - 沒有傳入參數自動使用預設值。參數預設值定義後自動產生內外同名的參數，呼叫時必須加上外部參數名。
 
 ```swift
 func hi(name: String = "World") {
@@ -64,7 +66,7 @@ hi(name: "John")    //output: Hello, John.
 hi()                //output: Hello, world.
 ```
 
-function 傳入參數為常數，若要修改要另外用 `var` 宣告。
+function 傳入參數為常數，若要修改要另外用`var`宣告。
 
 ```swift
 func hi(name: String) {
@@ -94,7 +96,7 @@ add(number)
 println(number) //output: 10
 ```
 
-function 用`inout`宣告變數，函式內部改變參數值會同時作用到傳入的變數，呼叫函式`inout` 參數前要加`&`。
+function 用`inout`宣告變數，函式內部改變參數值會同時作用到傳入的變數，呼叫函式`inout`參數前要加`&`。
 
 ```swift
 func add(inout num: Int) {
@@ -116,23 +118,18 @@ func hi() -> String {
 hi()    //return: "Hello, World."
 ```
 
-function 沒有回傳值可以這麼宣告。
+function 沒有回傳值，以下三種方式意義相同。
 
 ```swift
-func foo() {
-}
-
-func bar() -> Void {
-}
-
-func baz() -> () {
-}
+func foo() { }
+func bar() -> Void { }
+func baz() -> () { }
 ```
 
 <a name="variadic_parameters"></a>
 ### function 不限數量的參數（*Variadic Parameters*）
 
-- 不限數量參數必須放在餐數列最後
+- 不限數量參數必須放在參數列最後
 - 最多只能有一個參數是不限數量參數
 
 ```swift
@@ -148,7 +145,7 @@ hi("可愛的", "小狗", "小貓", "小兔"); //output: 可愛的小狗, 可愛
 <a name="function_type"></a>
 ### function 型別
 
-function 型別由參數型別與回傳型別共同定義。function 型別也是型別的一懂，所以也可以使用變數指向function。
+function 型別由參數型別與回傳型別共同定義。function 型別也是型別的一種，也可以使用變數（常數）指向function。
 
 ```swift
 func add5(num: Int) -> Int {
@@ -159,7 +156,7 @@ var add: (Int)->Int = add5
 add(5)  //return: 10
 ```
 
-> `add`變數型別為`(Int)->Int`，呼叫時加上`()`，括號內填上符合 function 定義的參數。
+> `add`變數型別為`(Int)->Int`，呼叫時必須加上`()`，括號內填上符合 function 定義的參數。
 
 <a name="overloading"></a>
 ### function 的多載
@@ -243,7 +240,7 @@ repeat(3, foo)  //output: foofoofoo
 repeat(3, bar)  //output: barbarbar
 ```
 
-- `repeat`裡面for-in的計數器不重要，可用底線`_`取代。
+- `repeat`裡面for-in的計數器的值不重要，可用底線`_`取代。
 - `action`型別為`()->()`，沒有傳入參數，也沒有回傳值。
 - 傳入`repeat`的第二個的參數必須合乎`()->()`的條件。
 
@@ -293,6 +290,7 @@ doStuff()   //return: "bar"
 ```
 
 理論上外層 function 執行完他擁有的 context 就會消失，但 nested funtion 有個神奇的能力 - 回傳的 function 可以存取以下資料：
+
 1. 自己宣告的變數（常數）
 2. 傳給自己的參數
 3. 外層function宣告的變數（常數）
@@ -300,30 +298,31 @@ doStuff()   //return: "bar"
 5. 最外層的全域變數（常數）
 
 ```swift
-let globalVar = "global value"
+let gloVar = "GV"
+let gloCon = "GC"
 
 func extFunc(extArg: String) -> (String)->String {
-    var extVar = "external variable"
-    
+    var extVar = "EV"
+    let extCon = "EC"
+
     func intFunc(intArg: String) -> String {
-        var intVar = "internal variable"
+        var intVar = "IV"
+        let intCon = "IC"
         
-        return "access to \(intVar), \(intArg), \(extVar), \(extArg), \(globalVar)"
+        return "access to \(intVar), \(intCon), \(intArg), \(extVar), \(extCon), \(extArg), \(gloVar), \(gloCon)"
     }
     
     return intFunc
 }
 
-var magicFunc = extFunc("external argument")
-magicFunc("internal argument") //return: "access to internal variable, internal argument, external variable, external argument, global value"
+var magicFunc = extFunc("EA")
+magicFunc("IA") //return: "access to IV, IC, IA, EV, EC, EA, GV, GC"
 ```
-
-既然內層 function 可以存取外層 function 的參數與變數（常數），那就能做一些神奇的事情。
 
 <a name="function_and_optional"></a>
 ### function 與 optional
 
-function 的參數與回傳值也可以是 optional。
+function 的參數與回傳值可以是 optional。
 
 ```swift
 func hi(name: String!) -> String? {
@@ -337,33 +336,31 @@ hi(nil)     //return: nil
 <a name="curried_function"></a>
 ### curried function
 
-curried function 就是直接呼叫 nested function 回傳的 function，執行時會像下面`herSalary`呼叫`paySalary`時串接兩個`()`，雖簡潔卻犧牲可讀性。
+curried function 就是直接呼叫 nested function 回傳的 function，執行時會像以下範例呼叫`repeat`時串接兩個`()`，雖簡潔卻犧牲可讀性。
 
 ```swift
-func paySalary(salary: Int) -> (Int)->Int {
-    func addBonus(bonus: Int) -> Int {
-        return salary + bonus
+func repeat(times: Int) -> (String)->() {
+    func say(message: String) {
+        for _ in 1...times {
+            print(message)
+        }
     }
-    return addBonus
+    return say
 }
 
-var pay = paySalary(22_000)
-var hisSalary = pay(1_000)                      //return: 23000
-
-var herSalary = paySalary(44_000)(1_000)        //return: 45000
+repeat(2)("Hello!")             //output: Hello!Hello!
 ```
 
-另一種 curried function 定義方式如下，簡單來說就是把內外兩層 function 混在一起做撒尿牛丸。`herSalary`呼叫`paySalary`的方式和前一個範例有一點點不同，第二個`()`裡面要包含參數名稱，否則會編譯錯誤。
+另一種 curried function 定義方式如下，簡單來說就是把內外兩層 function 混在一起做撒尿牛丸。呼叫`repeat`的方式和前一個範例有一點點不同，第二個`()`裡面要包含參數名稱，否則會編譯錯誤。
 
 ```swift
-func paySalary(salary: Int) (bonus: Int)->Int {
-    return salary + bonus
+func repeat(times: Int)(message: String) -> () {
+    for _ in 1...times {
+        print(message)
+    }
 }
 
-var pay = paySalary(22_000)
-var hisSalary = pay(bonus: 1_000)               //return: 23000
-
-var herSalary = paySalary(44_000)(bonus: 1_000) //return: 45000
+repeat(2)(message: "Hello!")    //output: Hello!Hello!
 ```
 
-> 方便簡潔是把雙面刃，請永遠記住"Write Code for Humans not Machines"。
+> 方便簡潔是把雙面刃，永遠記住 "Write Code for Humans not Machines"。

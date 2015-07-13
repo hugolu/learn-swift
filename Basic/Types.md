@@ -8,49 +8,50 @@
 - [型別安全](#TypeSafety)
 
 <a name="Integer"></a>
-### 整數 (`Int`、`UInt`)
+### 整數
 
 內建有號整數型別：`Int8`、`Int16`、`Int32`、`Int64`。
+
 內建無號整數型別：`UInt8`、`UInt16`、`UInt32`、`UInt64`。
 
-`Int`等同`Int64`，`UInt`等同`UInt64`。表達時可用底線(`_`)增加可讀性。
+`Int`等同`Int64`，`UInt`等同`UInt64`。表達數值時可用底線(`_`)增加可讀性。
 
 ```swift
-var num = 123_456_789
+var num = 123_456_789  //return: 123456789
 ```
 
 內建定義整數最大、最小值。
 
 ```swift
-var uiMin = UInt.min    //0
-var uiMax = UInt.max    //18446744073709551615
+var uiMin = UInt.min        //0
+var uiMax = UInt.max        //18446744073709551615
 
-var iMin = Int.min      //-9223372036854775808
-var iMax = Int.max      //9223372036854775807
+var iMin = Int.min          //-9223372036854775808
+var iMax = Int.max          //9223372036854775807
 ```
 
 <a name="FloatingPoint"></a>
-### 浮點數 (`Float`、`Double`)
+### 浮點數
 
-使用`Double`(64-bit)、`Float`(32-bit)表達浮點數。
+浮點數使用`Double`(64-bit)、`Float`(32-bit)表達。
 
 ```swift
 var pi = 3.14159265359
 ```
 
 <a name="Boolean"></a>
-### 布林值 (`Bool`)
+### 布林值
 
-Bool只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
+布林值(`Bool`)只有兩個值`true`或`false`，不可用數字`0`或`1`表示。
 
 ```swift
 var dream = true
 ```
 
 <a name="String"></a>
-### 字串 (`String`)
+### 字串
 
-用兩個引號(`"`)包含的字串。
+字串(`String`)使用兩個引號(`"`)包含要描述的字元組。
 
 ```swift
 var message = "hello world"
@@ -74,7 +75,6 @@ var b2: Bool = true
 var s1 = "hello"
 var s2: String = "hello"
 ```
-
 <a name="TypeSafety"></a>
 ### 型別安全 (*Type Safety*)
 

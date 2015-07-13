@@ -10,7 +10,7 @@
 <a name="if-else"></a>
 ### if-else
 
-條件判斷不需加`()`，要用也可以。
+條件判斷不需加`()`，要使用也可以。
 
 ```swift
 var num = -10
@@ -216,4 +216,3 @@ for num in 1...5 {
     print(num)
 }   //output: 12345
 ```
-
