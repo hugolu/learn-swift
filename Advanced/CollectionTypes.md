@@ -1,4 +1,4 @@
-# Collection
+# 集合型別 (Collection Types)
 
 - [Array](#Array)
 - [Dictionary](#Dictionary)
@@ -301,7 +301,7 @@ for (index, item) in enumerate(fruits) {
 
 ### Tuple 與 Function 的應用
 
-Function 回傳的複數結果，若不想大費周章宣告`struct`包裝回傳值，可使用輕量化的 Tuple 取代。
+Function 回傳的複數結果，若不想大費周章宣告`struct`包裝回傳值或透過`Array`回傳，可使用輕量化的 Tuple 取代。
 
 ```swift
 func http() -> (Int, String) {
