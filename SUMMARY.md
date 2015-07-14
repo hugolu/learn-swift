@@ -17,8 +17,6 @@
    * [型別轉型](Advanced/Typecasting.md)
    * [擴充型別](Advanced/ProtocolExtension.md)
    * [通用型別](Advanced/Generic.md)
+   * [高階函式](Advanced/HighOrderFunctions.md)
+   * [記憶體管理](Advanced/ARC.md)
 * [應用](Applications/README.md)
-* [補充](Supplements/README.md)
-   * [高階函式](Supplements/HighOrderFunctions.md)
-   * [記憶體管理](Supplements/ARC.md)
-
