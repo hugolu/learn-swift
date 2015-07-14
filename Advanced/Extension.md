@@ -1,5 +1,9 @@
 # 擴充型別
 
+- [Protocol](#Protocol)
+- [Extension](#Extension)
+
+<a name="Protocol"></a>
 ## Protocol
 
 ### Protocol 簡介
@@ -113,6 +117,7 @@ protocol Moveable {
 }
 ```
 
+<a name="Extension"></a>
 ## Extension
 
 `extension`用來擴充`class`、`struct`、`enum`的能力。使用時機可能有：
