@@ -103,10 +103,48 @@ girl = nil
 - 兩人相愛之下`boy.lover = girl`、`girl.lover = boy`，物件形成相互參考。
 - 當男孩失去外部參考`boy = nil`，卻因為女孩依然記得他`girl.lover = boy`，男孩沒被系統回收。
 - 當女孩失去外部參考`gilr = nil`，卻因為死去的男孩依然也記得她`boy.lover = girl`，女孩沒被系統回收。
-- 兩個人就變成~殭屍~永恆，永遠不被消滅。
+- 兩個人就變成~~殭屍~~傳奇，永遠不消滅。
 
 <a name="Weak"></a>
 ## `weak`針對 Optional 的變數、常數
+
+物件永不消滅，這不科學啊！這是記憶體洩漏 (Memory Leak)，記憶體用不著抓著不放會導致 App 消耗越來越多的記憶體，最後系統因為記憶體資源不足必須刪除進程，佔用大量記憶體的程式就是開刀對象啦。
+
+那麼之前的問題要如何解決呢？答案是將有可能造成 Reference Cycle 的變數宣告為 Optional 並加上`weak`關鍵字，告訴系統這個變數不會增加 ARC 參考數量。
+
+```swift
+class Person {
+    var name: String
+    weak var lover: Person?
+    
+    init(name: String) {
+        self.name = name
+        println("\(name) is borned")
+    }
+
+    deinit {
+        println("\(name) is dead")
+    }
+}
+
+var boy: Person! = Person(name: "Roméo")        //output: Roméo is borned
+var girl: Person! = Person(name: "Juliette")    //output: Juliette is borned
+
+boy.lover = girl        //return: {name "Roméo" {{name "Juliette" nil}}}
+girl.lover = boy        //return: {name "Juliette" {{name "Roméo" {{…}}}}}
+
+boy.lover?.name         //return: "Juliette"
+girl.lover?.name        //return: "Roméo"
+
+boy = nil               //output: Roméo is dead
+girl.lover?.name        //return: nil
+girl = nil              //output: Juliette is dead
+```
+
+- 雖然兩人相愛`boy.lover = girl`、`girl.lover = boy`，但因為`weak`物件不會形成相互參考。
+- 當男孩失去外部參考`boy = nil`，女孩馬上忘記這段感情`girl.lover?.name //return: nil`，男孩被系統回收。
+- 當女孩失去外部參考`gilr = nil`，因為世界上沒有人記得她，女孩也被系統回收。
+- 兩個人都跑去投胎，記憶體順利被釋放。
 
 <a name="Unowned"></a>
 ## `unowned`針對非 Optional 的變數、常數
