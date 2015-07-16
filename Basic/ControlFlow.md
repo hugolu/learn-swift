@@ -1,65 +1,55 @@
-## 流程控制
+# 流程控制
 
-- [if-else](#if_else)
+- [if](#if)
 - [switch](#switch)
 - [for](#for)
 - [while](#while)
 - [指定範圍](#range)
 - [進階用法](#advanced)
 
-<a name="if-else"></a>
-### if-else
+<a name="if"></a>
+## if
 
-條件判斷不需加`()`，要使用也可以。
+- 條件判斷不需加`()`，要使用也可以。
+- 判斷結果必須是`Bool`。
+- 條件成立時，就算只執行一行程式也不能省略`{}`。
+- 條件不成立，使用`else`執行否定敘述。
 
 ```swift
-var num = -10
-var abs: Int
+var happyness = true
 
-if num > 0 {
-    abs = num
+if happyness {
+    println("😀")       //return: "😀"
 } else {
-    abs = -num
+    println("😢")
 }
 ```
 
-判斷式結果必須是 `Bool`。
-
-```swift
-var num = 0
-if num {    //error: type 'Int' does not conform to protocol 'BooleanType'
-}
-```
-
-複合判斷使用`&&`或`||`。
+- 複合判斷使用`&&`或`||`。
 
 ```swift
 var weekend = true
 var sunny = true
+
 if weekend && sunny {
-    var mood = "😄"
+    var mood = "😄"     //return: "😄"
 }
 ```
 
-條件成立時，就算只執行一行程式也不能省略`{}`。
-
-```swift
-var num = 1
-if true     //expectd '{' after 'if' condition
-    num = 2
-```
-
 <a name="switch"></a>
-### switch
+## switch
 
-條件判斷不需加`()`，要用也可以。
+- 條件判斷不需加`()`，要用也可以。
+- 條件分支使用`case`，加上處理的敘述。
+- 必須包含所有`case`，或是使用`default`捕捉剩下的情況。
+
 
 ```swift
 var score = 0
 
 switch score {
 case 0:
-    "白癡"  //執行
+    "白癡"            //retunr: "白癡"
 case 100:
     "天才"
 default:
@@ -67,20 +57,9 @@ default:
 }
 ```
 
-一定要包含所有`case`，或是使用`default`捕捉剩下的情況。
-
-```swift
-var score = 0
-
-switch score {
-case 0:
-    "白癡"  //執行
-case 100:
-    "天才"
-}   //error: switch must be exhaustive, consider adding a default clause
-```
-
-`case`不需`break`可自動跳出`switch`，`case`不做任何事必須使用`break`。使用`fallthrough`繼續執行下個`case`。
+- `case`不需`break`可自動跳出`switch`。
+- `case`不做任何事必須使用`break`。
+- 使用`fallthrough`不離開`switch`繼續執行下個`case`。
 
 ```swift
 var score = 0
@@ -89,33 +68,33 @@ switch score {
 case 0:
     fallthrough
 case 100:
-    "天才白痴一線間"    //執行
+    "天才白痴一線間"    //return: "天才白痴一線間"
 default:
     break
 }
 ```
 
-可一次比較多個條件。
+- 可一次比較多個條件。
 
 ```switch
 var grade = 100
 
 switch grade {
 case 0, 100:
-    "天才白痴一線間"    //執行
+    "天才白痴一線間"    //return: "天才白痴一線間"
 default:
     "平凡人"
 }
 ```
 
-可比較任何型別。
+- 可比較任何型別。
 
 ```swift
 var fruit = "蘋果"
 
 switch fruit {
 case "蘋果":
-    "好吃"              //執行
+    "好吃"            //return: "好吃"
 case "榴槤":
     "噁心"
 default:
@@ -124,9 +103,14 @@ default:
 ```
 
 <a name="for"></a>
-### for
+## for
 
-for-loop 條件判斷不需加`()`，要用也可以。判斷式結果必須是 `Bool`。複合判斷使用`&&`或`||`。`{}`不能省略。
+### for-loop
+- 條件判斷不需加`()`，要用也可以。
+- 判斷式結果必須是`Bool`。
+- 複合判斷使用`&&`或`||`。
+- `{}`不能省略。
+- 使用變數`var num: Int`。
 
 ```swift
 for var num = 0; num < 3; num++ {
@@ -134,7 +118,10 @@ for var num = 0; num < 3; num++ {
 }
 ```
 
-for-in 從集合中取出元素逐一執行。
+### for-in
+- 從集合中取出元素逐一執行，不能加`()`。
+- `{}`不能省略。
+- 使用常數`let friend: String`。
 
 ```swift
 var friends = ["Eddy", "Gary", "Jimmy"]
@@ -143,31 +130,40 @@ for friend in friends {
 }
 ```
 
-> for-loop 使用變數（`var num: Int`），for-in 使用常數（`let friend: String`）。
-
 <a name="while"></a>
-### while-loop, do-while
+## while-loop, do-while
 
-兩種用法，直接看範例。
+### while-loop
 
 ```swift
-var num = 10
-
-while num-- > 0 {
-    println("while-loop: \(num)")
+var num = 0
+while num < 10 {
+    print("\(num)")
+    num += 1
 }
+//output: 0123456789
+```
 
+### do-while
+
+```swift
+var num = 0
 do {
-    println("do-while: \(num)")
-} while ++num < 10
+    print("\(num)")
+    num += 1
+} while num < 10
+//output: 0123456789
 ```
 
 > Swift2 修改 do-while 語法，改用 repeat-while。
 
 <a name="range"></a>
-### 指定範圍
+## 指定範圍
 
-使用 range operator，宣告某數字區間的範圍。（限制：只能遞增，每次+1）
+### Range Operator
+
+- 宣告某整數區間的範圍。
+- 限制只能遞增，每次+1。
 
 ```switch
 for num in 1...5 {
@@ -179,29 +175,34 @@ for num in 1..<5 {
 }   //output: 1234
 ```
 
-使用 stride，更靈活宣告範圍。
+### Stride Operator
+
+- 宣告範圍更靈活。
+- 可以遞增或遞減。
+- 起點使用：`from`。
+- 終點使用：`through`（包含終點），`to`（不含終點）。
 
 ```swift
 for num in stride(from: 9, through: 1, by: -2) {
     print(num)
-}   //output: 97531 (包含終點)
+}   //output: 97531 
 
 for num in stride(from: 9, to: 1, by: -2) {
     print(num)
-}   //output: 9753 (不含終點)
+}   //output: 9753
 ```
 
 <a name="advanced"></a>
-### 進階用法
+## 進階用法
 
-switch + range：
+### `switch` + Range
 
 ```swift
 var score = 65
 
 switch score {
 case 0..<60:    "E"
-case 60..<70:   "D" //執行
+case 60..<70:   "D" //output: "D"
 case 70..<80:   "C"
 case 80..<90:   "B"
 case 90...100:  "A"
@@ -209,7 +210,7 @@ default:        "?"
 }
 ```
 
-for-in + range:
+### `for-in` + Range
 
 ```swift
 for num in 1...5 {
