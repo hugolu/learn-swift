@@ -1,14 +1,14 @@
 # 流程控制
 
-- [if](#if)
-- [switch](#switch)
-- [for](#for)
-- [while](#while)
+- [`if`](#if)
+- [`switch`](#switch)
+- [`for`](#for)
+- [`while`](#while)
 - [指定範圍](#range)
 - [進階用法](#advanced)
 
 <a name="if"></a>
-## if
+## `if`
 
 - 條件判斷不需加`()`，要使用也可以。
 - 判斷結果必須是`Bool`。
@@ -37,7 +37,7 @@ if weekend && sunny {
 ```
 
 <a name="switch"></a>
-## switch
+## `switch`
 
 - 條件判斷不需加`()`，要用也可以。
 - 條件分支使用`case`，加上處理的敘述。
@@ -76,7 +76,7 @@ default:
 
 - 可一次比較多個條件。
 
-```switch
+```swift
 var grade = 100
 
 switch grade {
@@ -103,7 +103,7 @@ default:
 ```
 
 <a name="for"></a>
-## for
+## `for`
 
 ### for-loop
 - 條件判斷不需加`()`，要用也可以。
@@ -131,7 +131,7 @@ for friend in friends {
 ```
 
 <a name="while"></a>
-## while-loop, do-while
+## `while`
 
 ### while-loop
 
