@@ -1,14 +1,14 @@
 # 進階部分
 
-- [Class](Advanced/Class.md)
-- [Struct](Advanced/Struct.md)
-- [Enum](Advanced/Enum.md)
-- [集合型別](Advanced/CollectionTypes.md)
-- [型別轉型](Advanced/Typecasting.md)
-- [擴充型別](Advanced/ProtocolExtension.md)
-- [通用型別](Advanced/Generic.md)
-- [高階函式](Advanced/HighOrderFunctions.md)
-- [記憶體管理](Advanced/ARC.md)
+- [Class](Class.md)
+- [Struct](Struct.md)
+- [Enum](Enum.md)
+- [集合型別](CollectionTypes.md)
+- [型別轉型](Typecasting.md)
+- [擴充型別](ProtocolExtension.md)
+- [通用型別](Generic.md)
+- [高階函式](HighOrderFunctions.md)
+- [記憶體管理](ARC.md)
 
 首先介紹功能強大的複合型別`class`、`struct`、`enum`，這幾個型別看起來有幾分相似但適用情況不同。
 
