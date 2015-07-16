@@ -1,57 +1,52 @@
-## Optional
+# Optional
 
-- [使用 optional 的理由](#reasons)
-- [宣告](#declartion)
-- [設定與讀取](#get_set)
-- [檢查是否有值](#check)
-- [判斷取值 (*optional binding*)](#optional_binding)
-- [自動取值 (*implicitly unwrapped optional*)](#implicitly_unwrapped_optional)
-- [無值給預設值](#double_question_mark)
+- [宣告、設定與讀取](#DeclartionGetSet)
+- [檢查是否有值](#Check)
+- [判斷取值](#OptionalBinding)
+- [自動取值](#ImplicitlyUnwrappedOptional)
+- [無值給預設值](#DoubleQuestionMark)
 
-<a name="reasons"></a>
-### 使用 optional 的理由
+<a name="DeclartionGetSet"></a>
+## 宣告、設定與讀取
 
-optional 是個包裝型別的容器，有兩種狀態：一個是空無一物、一個就是型別的值。
-
-以下範例使用`-1`表示`age`未初始化的狀態，容易產生誤解。
+沒有 Optional 的世界，必須特別定義“什麼”表示變數未初始化狀態，這個約定必須人為維護，不但編譯器無法幫忙檢查，開發者間也容易產生誤解。
 
 ```swift
-var age:Int = -1
+var age:Int = -1  //年齡未定義，還是-1歲？！
 ```
 
-<a name="declartion"></a>
 ### 宣告
 
-型別後面加上問號`?`表示變數是個 optional。optional 預設值為`nil`，宣告後不賦值即設為預設值。
+- Optional 是個包裝型別的容器，有兩種狀態：一個是空無一物、一個就是型別的值。
+- 型別後面加上問號`?`表示變數是個 Optional。型別與`?`間不可留空白。
+- Optional 預設值為`nil`，宣告後不賦值即設為預設值。 
 
 ```swift
 var age: Int?   			//return: nil
 var name: String? = nil		//return: nil
 ```
 
-> `Int` 與 `?` 之間不可留空白。
+### 設定、讀取
 
-<a name="get_set"></a>
-### 設定與讀取
-
-optional 設定方式與一般給值沒有差異。取值必須加上驚嘆號`!`，強制解開包裝(*force-unwrap*)。
+- 設定方式與一般賦值沒有差異。
+- 取值必須加上驚嘆號`!`，強制解開包裝（*Force Unwrap*）。
 
 ```swift
 var age: Int? = 18
 age = age! + 1
 ```
 
-<a name="check"></a>
-### 檢查是否有值
+<a name="Check"></a>
+## 檢查是否有值
 
-強制解開一個值為`nil`的optional，會讓程式炸掉。
+強制解開一個值為`nil`的 Optional，會讓程式爆炸。
 
-``` switch
+``` swift
 var age: Int?
 age = age! + 1  //fatal error: unexpectedly found nil while unwrapping an Optional value
 ```
 
-optional 取值前要先判斷是否為nil。
+Optional 取值前要先判斷是否為nil。
 
 ```swift
 var age: Int?
@@ -61,10 +56,10 @@ if age != nil {
 }
 ```
 
-<a name="optional_binding"></a>
-### 判斷取值 (*optional binding*)
+<a name="OptionalBinding"></a>
+## 判斷取值 (*Optional Binding*)
 
-先判斷是否為`nil`，再使用`!`取值方式太囉唆，判斷取值技巧將兩步驟合併為一個。
+先判斷是否為`nil`，再用`!`取值方式太囉唆，判斷取值技巧將兩步驟合而為一。
 
 ```swift
 var age: Int? = 20
@@ -74,13 +69,14 @@ if let ageNum = age {
 }
 ```
 
-* 若 age 有值，得到 ageNum=20 型別為`Int`，使用 ageNum 不需透過`!`強制解開包裝。
-* 若 age 無值，`{}`內程式不會被執行。
+- 若`age`有值，得到`ageNum=20`型別為`Int`，不需再透過`!`強制解開包裝。
+- 若`age`無值，`{}`內程式不會被執行。
 
-<a name="implicitly_unwrapped_optional"></a>
-### 自動取值 (*implicitly unwrapped optional*)
+<a name="ImplicitlyUnwrappedOptional"></a>
+## 自動取值 (*Implicitly Unwrapped Optional*)
 
-如果變數或常數一旦給值後就不會再變回無值的狀態，可以利用自動取值的方式宣告。型別後面加上問號`!` 表示變數是個 implicitly unwrapped optional。
+- 如果變數（常數）一旦給值後不會再變回無值的狀態，可以利用自動取值的方式宣告。
+- 型別宣告後面加上問號`!` 表示變數（常數）是 Implicitly Unwrapped Optional。
 
 ```swift
 let name: String! = "Hugo"
@@ -97,10 +93,10 @@ var age: Int! = nil
 age = age + 1   //fatal error: unexpectedly found nil while unwrapping an Optional value
 ```
 
-<a name="double_question_mark"></a>
-### 無值給預設值
+<a name="DoubleQuestionMark"></a>
+## 無值給預設值
 
-若希望在 optional 無值時給個預設值，可用雙問號`??`後面加預設值，這個應該是三元運算的語法糖。
+若希望在 Optional 無值時給預設值，可用雙問號`??`後面加預設值，這應該是三元運算的語法糖。
 
 ```swift
 var age: Int? = nil
