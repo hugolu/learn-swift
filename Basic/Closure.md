@@ -1,14 +1,14 @@
-## Closure
+# Closure
 
-- [closure: 無名的 function](#function_without_name)
-- [接受參數的 closure](#closure_has_parameters)
-- [當作參數的 closure](#closure_as_parameter)
-- [能省則省的 closure](#omitted_stuffs)
+- [Closure：無名的 Function](#FunctionWithoutName)
+- [接受參數的 Closure](#ClosureHasParameters)
+- [當作參數的 Closure](#ClosureAsParameter)
+- [能省則省的 Closure](#OmittedStuffs)
 
-<a name="function_without_name"></a>
-### closure: 無名的 function
+<a name="FunctionWithoutName"></a>
+## Closure：無名的 Function
 
-觀察以下兩個範例。第一個使用`func`宣告 function，然後使用變數`hi`儲存；第二個直接定義 closure 使用變數`hi`儲存。closure 語法把 function 名稱右邊的參數列與回傳值放到`{}`的第一行然後加上`in`，其餘不變。
+範例一，首先定義 Function，**然後**把它儲存在變數`hi`。
 
 ```swift
 func greeting() {
@@ -19,6 +19,8 @@ var hi = greeting
 hi()   //output: hello world
 ```
 
+範例二，直接定義 Closure 儲存在變數`hi`。
+
 ```swift
 var hi = { ()->() in
     println("hello world")
@@ -27,12 +29,14 @@ var hi = { ()->() in
 hi()   //output: hello world
 ```
 
-> `hi`的型別能從`=`右邊推測得知，型別定義`()->()`可以省略。
+- Closure 不包含 Function 名稱。
+- Closure 語法把 Function 名稱右邊參數列與回傳型別放到`{`右邊然後加上`in`，其餘不變。
+- 儲存 Closure 變數的型別能從`=`右邊的 Closure 內容推測得知，型別定義可省略。
 
-<a name="closure_has_parameters"></a>
-### 接受參數的 closure
+<a name="ClosureHasParameters"></a>
+## 接受參數的 Closure
 
-closure 接受參數的用法與 function 雷同，直接看範例。
+Closure 接受參數的用法與 Function 雷同。
 
 ```swift
 var hi = { (name: String)->() in
@@ -42,10 +46,10 @@ var hi = { (name: String)->() in
 hi("hugo")   //output: hello hugo
 ```
 
-<a name="closure_as_parameter"></a>
-### 當作參數的 closure
+<a name="ClosureAsParameter"></a>
+## 當作參數的 Closure
 
-closure 當作參數的用法與 function 雷同，直接看範例。
+Closure 當作參數的用法與 Function 雷同。
 
 ```swift
 func repeat(count: Int, action: ()->()) {
@@ -60,7 +64,7 @@ repeat(3, {
 })
 ```
 
-上面`repeat`呼叫方式可讀性不好，可把要傳入的 closure 拉到`()`最後面，這個技巧稱作 trailing closure。
+上面`repeat`呼叫方式可讀性不好，可以把傳入的 Closure 拉到`()`後面，這個技巧稱作 Trailing Closure。
 
 ```swift
 func repeat(count: Int, action: ()->()) {
@@ -75,7 +79,7 @@ repeat(3) {
 }
 ```
 
-上面 closure 內的`()->() in`可以省略，因為傳入的參數型別已經定義在`action`上。
+上面 Closure 內的`()->() in`可以省略，因為參數型別已定義在`action`上。
 
 ```swift
 func repeat(count: Int, action: ()->()) {
@@ -89,8 +93,8 @@ repeat(3) {
 }
 ```
 
-<a name="omitted_stuffs"></a>
-### 能省則省的 closure
+<a name="OmittedStuffs"></a>
+## 能省則省的 Closure
 
 先來個囉唆的完整版。
 
@@ -110,7 +114,7 @@ repeat(3) {
 //output: 第3次說hello
 ```
 
-以下範例省略回傳型別 (回傳型別由`action`定義)。
+以下範例省略回傳型別（回傳型別由`action`定義）。
 
 ```swift
 repeat(3) {
@@ -119,7 +123,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略參數型別 (參數型別由`action`定義)。
+以下範例省略參數型別（參數型別由`action`定義）。
 
 ```swift
 repeat(3) {
@@ -128,7 +132,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略參數名稱 (第一個參數名預設為$0, 第二個參數名預設為$1，以此類推)。
+以下範例省略參數名稱（第一個參數名為`$0`, 第二個參數名為`$1`，以此類推）。
 
 ```swift
 repeat(3) {
@@ -136,7 +140,7 @@ repeat(3) {
 }
 ```
 
-以下範例省略`return` (closure 最後一個 statement 的結果預設為回傳值，可以不加`return`)。
+以下範例省略回傳動作`return`（Closure 最後一個 Statement 結果預設為回傳值，可不加`return`）。
 
 ```swift
 repeat(3) {
