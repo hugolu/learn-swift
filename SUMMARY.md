@@ -19,4 +19,4 @@
    * [通用型別](Advanced/Generic.md)
    * [高階函式](Advanced/HighOrderFunctions.md)
    * [記憶體管理](Advanced/ARC.md)
-* [應用](Applications/README.md)
+* [練習](Practices/README.md)
