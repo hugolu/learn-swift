@@ -20,3 +20,4 @@
    * [高階函式](Advanced/HighOrderFunctions.md)
    * [記憶體管理](Advanced/ARC.md)
 * [練習](Practices/README.md)
+   * [Calculator](Practices/Calculator.md)
